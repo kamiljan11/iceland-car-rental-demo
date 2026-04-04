@@ -1,6 +1,10 @@
 import { Mountain } from "lucide-react";
+import { useLang } from "@/i18n/LanguageContext";
+import { translations as t } from "@/i18n/translations";
 
 const Footer = () => {
+  const { lang } = useLang();
+
   return (
     <footer className="border-t border-border py-12 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
@@ -11,7 +15,7 @@ const Footer = () => {
           </span>
         </div>
         <p className="text-muted-foreground text-sm">
-          Demo strony wypożyczalni · Stworzone przez Twój zespół
+          {t.footer.desc[lang]}
         </p>
       </div>
     </footer>
