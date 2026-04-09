@@ -1,7 +1,7 @@
 import carSuv from "@/assets/car-suv.jpg";
 import carCamper from "@/assets/car-camper.jpg";
 import carCompact from "@/assets/car-compact.jpg";
-import { Users, Fuel, Snowflake, MapPin } from "lucide-react";
+import { Users, Fuel, Snowflake, MapPin, Mountain, AlertTriangle } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
 
@@ -45,6 +45,19 @@ const FleetSection = () => {
                   <span className="absolute top-4 left-4 bg-primary/90 text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
                     {v.tag[lang]}
                   </span>
+                  {/* F-road badge */}
+                  {v.froad && (
+                    <span className="absolute top-4 right-4 bg-accent/90 text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+                      <Mountain className="w-3 h-3" />
+                      F-Road OK
+                    </span>
+                  )}
+                  {!v.froad && (
+                    <span className="absolute top-4 right-4 bg-destructive/80 text-destructive-foreground text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+                      <AlertTriangle className="w-3 h-3" />
+                      No F-Roads
+                    </span>
+                  )}
                 </div>
                 <div className="p-6">
                   <h3 className="font-display text-2xl font-semibold mb-1">
@@ -54,7 +67,7 @@ const FleetSection = () => {
                     {v.subtitle[lang]}
                   </p>
                   <div className="flex flex-wrap gap-3 mb-4">
-                    {v.features[lang].map((f, i) => {
+                    {v.features[lang].map((f: string, i: number) => {
                       const Icon = icons[i];
                       return (
                         <span
@@ -67,9 +80,19 @@ const FleetSection = () => {
                       );
                     })}
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-5">
-                    <MapPin className="w-3.5 h-3.5 text-accent" />
-                    <span>{t.fleet.bestFor[lang]} {v.bestFor[lang]}</span>
+                  <div className="flex items-center gap-4 text-xs text-muted-foreground mb-5">
+                    <div className="flex items-center gap-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-accent" />
+                      <span>{t.fleet.bestFor[lang]} {v.bestFor[lang]}</span>
+                    </div>
+                  </div>
+                  {/* Age requirement */}
+                  <div className="text-xs text-muted-foreground mb-4 bg-secondary/50 px-3 py-2 rounded-lg">
+                    {lang === "pl"
+                      ? `Min. wiek kierowcy: ${v.minAge} lat`
+                      : lang === "is"
+                      ? `Lágmarksaldur ökumanns: ${v.minAge} ára`
+                      : `Minimum driver age: ${v.minAge} years`}
                   </div>
                   <div className="flex items-center justify-between pt-4 border-t border-border">
                     <span className="text-primary font-bold text-lg">
