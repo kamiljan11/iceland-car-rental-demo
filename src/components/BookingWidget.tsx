@@ -7,14 +7,14 @@ const BookingWidget = () => {
   const { lang } = useLang();
 
   return (
-    <div className="bg-card/90 backdrop-blur-lg border border-border rounded-2xl p-6 w-full max-w-4xl">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        {/* Pickup Location */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs text-primary font-medium uppercase tracking-wider">
+    <div className="bg-card/90 backdrop-blur-lg border border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 w-full max-w-4xl">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
+        {/* Pickup Location - full width on mobile */}
+        <div className="flex flex-col gap-1 col-span-2 lg:col-span-1">
+          <label className="text-[10px] sm:text-xs text-primary font-medium uppercase tracking-wider">
             {t.booking.pickupLocation[lang]}
           </label>
-          <div className="flex items-center gap-2 bg-secondary/60 rounded-lg px-3 py-2.5">
+          <div className="flex items-center gap-2 bg-secondary/60 rounded-lg px-3 py-2 sm:py-2.5">
             <MapPin className="w-4 h-4 text-primary shrink-0" />
             <select className="bg-transparent text-sm text-foreground w-full outline-none cursor-pointer">
               <option>Keflavík Airport (KEF)</option>
@@ -26,12 +26,12 @@ const BookingWidget = () => {
         </div>
 
         {/* Pickup Date */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs text-primary font-medium uppercase tracking-wider">
+        <div className="flex flex-col gap-1">
+          <label className="text-[10px] sm:text-xs text-primary font-medium uppercase tracking-wider">
             {t.booking.pickupDate[lang]}
           </label>
-          <div className="flex items-center gap-2 bg-secondary/60 rounded-lg px-3 py-2.5">
-            <Calendar className="w-4 h-4 text-primary shrink-0" />
+          <div className="flex items-center gap-2 bg-secondary/60 rounded-lg px-3 py-2 sm:py-2.5">
+            <Calendar className="w-4 h-4 text-primary shrink-0 hidden sm:block" />
             <input
               type="date"
               className="bg-transparent text-sm text-foreground w-full outline-none cursor-pointer"
@@ -40,12 +40,12 @@ const BookingWidget = () => {
         </div>
 
         {/* Dropoff Date */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs text-primary font-medium uppercase tracking-wider">
+        <div className="flex flex-col gap-1">
+          <label className="text-[10px] sm:text-xs text-primary font-medium uppercase tracking-wider">
             {t.booking.dropoffDate[lang]}
           </label>
-          <div className="flex items-center gap-2 bg-secondary/60 rounded-lg px-3 py-2.5">
-            <Calendar className="w-4 h-4 text-primary shrink-0" />
+          <div className="flex items-center gap-2 bg-secondary/60 rounded-lg px-3 py-2 sm:py-2.5">
+            <Calendar className="w-4 h-4 text-primary shrink-0 hidden sm:block" />
             <input
               type="date"
               className="bg-transparent text-sm text-foreground w-full outline-none cursor-pointer"
@@ -54,12 +54,12 @@ const BookingWidget = () => {
         </div>
 
         {/* Pickup Time */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs text-primary font-medium uppercase tracking-wider">
+        <div className="flex flex-col gap-1">
+          <label className="text-[10px] sm:text-xs text-primary font-medium uppercase tracking-wider">
             {t.booking.time[lang]}
           </label>
-          <div className="flex items-center gap-2 bg-secondary/60 rounded-lg px-3 py-2.5">
-            <Clock className="w-4 h-4 text-primary shrink-0" />
+          <div className="flex items-center gap-2 bg-secondary/60 rounded-lg px-3 py-2 sm:py-2.5">
+            <Clock className="w-4 h-4 text-primary shrink-0 hidden sm:block" />
             <select className="bg-transparent text-sm text-foreground w-full outline-none cursor-pointer">
               {Array.from({ length: 24 }, (_, i) => {
                 const h = String(i).padStart(2, "0");
@@ -75,8 +75,8 @@ const BookingWidget = () => {
 
         {/* Search Button */}
         <div className="flex flex-col justify-end">
-          <Button className="w-full py-6 text-base font-semibold gap-2 bg-accent text-accent-foreground hover:bg-accent/90">
-            <Search className="w-5 h-5" />
+          <Button className="w-full py-5 sm:py-6 text-sm sm:text-base font-semibold gap-2 bg-accent text-accent-foreground hover:bg-accent/90">
+            <Search className="w-4 h-4 sm:w-5 sm:h-5" />
             {t.booking.search[lang]}
           </Button>
         </div>
