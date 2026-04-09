@@ -1,6 +1,5 @@
 import heroImg from "@/assets/hero-iceland.jpg";
-import { Button } from "@/components/ui/button";
-import { MapPin, Calendar } from "lucide-react";
+import BookingWidget from "@/components/BookingWidget";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
 
@@ -8,7 +7,7 @@ const HeroSection = () => {
   const { lang } = useLang();
 
   return (
-    <section className="relative h-screen min-h-[700px] overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden flex flex-col">
       <img
         src={heroImg}
         alt="Dramatic Icelandic road stretching toward snow-capped mountains"
@@ -19,7 +18,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent" />
 
-      <div className="relative z-10 flex flex-col justify-end h-full max-w-7xl mx-auto px-6 pb-24">
+      <div className="relative z-10 flex flex-col justify-end flex-1 max-w-7xl mx-auto px-6 pb-12 pt-24">
         <p className="text-primary font-medium tracking-[0.3em] uppercase text-sm mb-4">
           {t.hero.subtitle[lang]}
         </p>
@@ -32,20 +31,7 @@ const HeroSection = () => {
           {t.hero.desc[lang]}
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 items-start">
-          <Button size="lg" className="text-base px-8 py-6 gap-2">
-            <Calendar className="w-5 h-5" />
-            {t.hero.cta1[lang]}
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="text-base px-8 py-6 gap-2 border-foreground/20 hover:bg-foreground/5"
-          >
-            <MapPin className="w-5 h-5" />
-            {t.hero.cta2[lang]}
-          </Button>
-        </div>
+        <BookingWidget />
       </div>
     </section>
   );

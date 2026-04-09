@@ -7,6 +7,165 @@ export const translations = {
     pricing: { en: "Pricing", pl: "Cennik", is: "Verðskrá" },
     contact: { en: "Contact", pl: "Kontakt", is: "Hafðu samband" },
     book: { en: "Book now", pl: "Rezerwuj", is: "Bóka" },
+    manage: { en: "Manage Booking", pl: "Zarządzaj rezerwacją", is: "Stjórna bókun" },
+    driving: { en: "Driving in Iceland", pl: "Jazda po Islandii", is: "Akstur á Íslandi" },
+    insurance: { en: "Insurance", pl: "Ubezpieczenie", is: "Trygging" },
+  },
+  booking: {
+    pickupLocation: { en: "Pickup Location", pl: "Miejsce odbioru", is: "Afhendingarstaður" },
+    pickupDate: { en: "Pick-up Date", pl: "Data odbioru", is: "Dagsetning afhendingar" },
+    dropoffDate: { en: "Drop-off Date", pl: "Data zwrotu", is: "Dagsetning skila" },
+    time: { en: "Pick-up Time", pl: "Godzina", is: "Tími" },
+    search: { en: "Search", pl: "Szukaj", is: "Leita" },
+  },
+  trust: {
+    award: { en: "Best Car Rental Iceland", pl: "Najlepsza wypożyczalnia Islandii", is: "Besta bílaleigan á Íslandi" },
+    awardSub: { en: "World Travel Awards 2024–2025", pl: "World Travel Awards 2024–2025", is: "World Travel Awards 2024–2025" },
+    saf: { en: "SAF Certified", pl: "Certyfikat SAF", is: "SAF vottað" },
+    safSub: { en: "Icelandic Travel Industry Assoc.", pl: "Islandzkie Stow. Turystyki", is: "Samtök ferðaþjónustunnar" },
+  },
+  howItWorks: {
+    label: { en: "How it works", pl: "Jak to działa", is: "Hvernig virkar" },
+    title: { en: "Book. Arrive. Drive.", pl: "Zarezerwuj. Przyleć. Jedź.", is: "Bókaðu. Komdu. Keyrðu." },
+    steps: {
+      book: {
+        title: { en: "Book Online", pl: "Zarezerwuj online", is: "Bókaðu á netinu" },
+        desc: {
+          en: "Full insurance with zero excess included in every booking. No hidden fees. No surprises. Free cancellation up to 48h.",
+          pl: "Pełne ubezpieczenie z zerowym udziałem własnym w każdej rezerwacji. Bez ukrytych opłat. Darmowe anulowanie do 48h.",
+          is: "Full trygging með engri sjálfsábyrgð innifalin í hverri bókun. Engin falinn kostnaður. Ókeypis afbókun 48 klst.",
+        },
+      },
+      arrive: {
+        title: { en: "Arrive at KEF", pl: "Przyleć do KEF", is: "Komdu á KEF" },
+        desc: {
+          en: "Check in online before you land. Your car will be prepared and waiting at Keflavík International Airport.",
+          pl: "Zamelduj się online przed lądowaniem. Twój samochód będzie przygotowany i czekał na lotnisku Keflavík.",
+          is: "Skráðu þig inn á netinu áður en þú lendir. Bíllinn þinn bíður tilbúinn á Keflavíkurflugvelli.",
+        },
+      },
+      drive: {
+        title: { en: "Grab Keys & Drive", pl: "Odbierz kluczyki", is: "Taktu lykla og keyrðu" },
+        desc: {
+          en: "Pick up your keys from our secure keybox. No queues, no upsells, no paperwork at pickup. Just drive.",
+          pl: "Odbierz kluczyki z naszego bezpiecznego keyboxa. Bez kolejek, bez dopłat, bez papierów. Po prostu jedź.",
+          is: "Sæktu lyklana í öruggri lyklakistu. Engar biðraðir, engin viðbótarsala. Bara keyrðu.",
+        },
+      },
+    },
+  },
+  insurance: {
+    label: { en: "Coverage", pl: "Ochrona", is: "Vernd" },
+    title: { en: "Iceland-Proof Insurance", pl: "Ubezpieczenie na Islandię", is: "Trygging fyrir Ísland" },
+    desc: {
+      en: "Iceland's unique conditions demand specialized coverage. Every rental includes our comprehensive insurance suite — designed specifically for volcanic terrain, extreme weather, and gravel roads.",
+      pl: "Unikalne warunki Islandii wymagają specjalistycznej ochrony. Każdy wynajem obejmuje nasz kompleksowy pakiet ubezpieczeniowy — zaprojektowany specjalnie dla wulkanicznego terenu, ekstremalnej pogody i szutrowych dróg.",
+      is: "Einstæðar aðstæður Íslands krefjast sérhæfðrar verndar. Sérhver leiga inniheldur okkar alhliða tryggingarskrá — sérstaklega hönnuð fyrir eldfjallasviðsmyndir, öfgafullt veður og malarvegi.",
+    },
+    items: [
+      {
+        title: { en: "CDW", pl: "CDW", is: "CDW" },
+        tag: { en: "Included", pl: "W cenie", is: "Innifalið" },
+        desc: { en: "Collision Damage Waiver covers damage to the rental vehicle in case of an accident.", pl: "Ubezpieczenie CDW pokrywa uszkodzenia wynajmowanego pojazdu w przypadku wypadku.", is: "CDW nær yfir tjón á leigubílnum við slys." },
+      },
+      {
+        title: { en: "SCDW", pl: "SCDW", is: "SCDW" },
+        tag: { en: "Included", pl: "W cenie", is: "Innifalið" },
+        desc: { en: "Super CDW reduces your excess to zero. Full peace of mind on any road.", pl: "Super CDW redukuje udział własny do zera. Pełny spokój na każdej drodze.", is: "SCDW lækkar sjálfsábyrgð í núll. Fullkominn hugarró á öllum vegum." },
+      },
+      {
+        title: { en: "Gravel Protection", pl: "Ochrona przed żwirem", is: "Malarvörn" },
+        tag: { en: "Included", pl: "W cenie", is: "Innifalið" },
+        desc: { en: "Covers windshield and body damage from gravel on Iceland's many unpaved roads.", pl: "Pokrywa uszkodzenia szyby i karoserii od żwiru na licznych szutrowych drogach Islandii.", is: "Nær yfir tjón á framrúðu og yfirborði frá möl á óburðarhæfum vegum." },
+      },
+      {
+        title: { en: "Sand & Ash Protection", pl: "Ochrona piasek/popiół", is: "Sand- og öskuvörn" },
+        tag: { en: "Included", pl: "W cenie", is: "Innifalið" },
+        desc: { en: "Volcanic sand and ash storms can damage paint. This unique Icelandic coverage protects you.", pl: "Wulkaniczny piasek i burze popiołu mogą uszkodzić lakier. Ta unikalna islandzka ochrona chroni Cię.", is: "Eldfjallasandur og öskustormar geta skemmt málningu. Þessi einstaka íslenska vernd verndar þig." },
+      },
+      {
+        title: { en: "Water Damage", pl: "Szkody wodne", is: "Vatnstjón" },
+        tag: { en: "Included", pl: "W cenie", is: "Innifalið" },
+        desc: { en: "Protection when crossing rivers in highland F-roads with approved 4×4 vehicles.", pl: "Ochrona przy przekraczaniu rzek na drogach F na wyżynach z zatwierdzonymi pojazdami 4×4.", is: "Vernd við vaðbreiður á F-vegum með viðurkenndum jeppum." },
+      },
+      {
+        title: { en: "Zero Deposit", pl: "Zero depozyt", is: "Engin tryggð" },
+        tag: { en: "NordCar Exclusive", pl: "Tylko NordCar", is: "NordCar eingöngu" },
+        desc: { en: "No credit card hold or deposit required. What you see is what you pay.", pl: "Brak blokady na karcie i depozytu. Co widzisz, tyle płacisz.", is: "Engin kreditkortahald eða trygging krafist. Það sem þú sérð er það sem þú borgar." },
+      },
+    ],
+    badges: [
+      { en: "Zero excess on all vehicles", pl: "Zero udział własny na wszystkich pojazdach", is: "Engin sjálfsábyrgð á öllum bílum" },
+      { en: "Zero deposit required", pl: "Zero depozyt", is: "Engin trygging" },
+      { en: "Zero hidden fees", pl: "Zero ukrytych opłat", is: "Engin falinn kostnaður" },
+      { en: "24/7 roadside assistance included", pl: "Pomoc drogowa 24/7 w cenie", is: "Vegaþjónusta 24/7 innifalin" },
+    ],
+  },
+  locations: {
+    label: { en: "Pickup & drop-off", pl: "Odbiór i zwrot", is: "Afhending og skil" },
+    title: { en: "Convenient Locations", pl: "Wygodne lokalizacje", is: "Þægilegir staðir" },
+    main: { en: "Main Hub", pl: "Główna baza", is: "Aðalstöð" },
+    items: [
+      {
+        name: { en: "Keflavík Int. Airport", pl: "Lotnisko Keflavík", is: "Keflavíkurflugvöllur" },
+        address: "Blikavöllur 3, 235 Keflavík Airport",
+        hours: { en: "Open 24/7 — Keybox pickup", pl: "Czynne 24/7 — Odbiór z keyboxa", is: "Opið 24/7 — Lyklakista" },
+        pickup: { en: "Inside airport terminal", pl: "Wewnątrz terminala", is: "Inni í flugstöðinni" },
+        phone: "+354 555 1234",
+      },
+      {
+        name: { en: "Reykjavík Downtown", pl: "Reykjavík Centrum", is: "Reykjavík miðbær" },
+        address: "Fiskislóð 22, 101 Reykjavík",
+        hours: { en: "08:00 – 18:00 daily", pl: "08:00 – 18:00 codziennie", is: "08:00 – 18:00 daglega" },
+        pickup: { en: "City center office", pl: "Biuro w centrum", is: "Skrifstofa í miðbæ" },
+        phone: "+354 555 5678",
+      },
+      {
+        name: { en: "Akureyri Airport", pl: "Lotnisko Akureyri", is: "Akureyrarflugvöllur" },
+        address: "Akureyri Airport (AEY)",
+        hours: { en: "Seasonal — June to September", pl: "Sezonowo — Czerwiec do Września", is: "Árstíðabundið — Júní til September" },
+        pickup: { en: "Airport meet & greet", pl: "Spotkanie na lotnisku", is: "Móttaka á flugvelli" },
+        phone: "+354 555 9012",
+      },
+    ],
+  },
+  drivingTips: {
+    label: { en: "Driving in Iceland", pl: "Jazda po Islandii", is: "Akstur á Íslandi" },
+    title: { en: "Stay Safe on the Road", pl: "Bądź bezpieczny na drodze", is: "Vertu öruggur á veginum" },
+    desc: {
+      en: "Iceland's roads are unique. Single-lane bridges, sudden weather changes, and unmarked gravel roads require attention. Here's what every driver should know.",
+      pl: "Drogi Islandii są wyjątkowe. Jednopasmowe mosty, nagłe zmiany pogody i nieoznakowane szutrowe drogi wymagają uwagi. Oto co powinien wiedzieć każdy kierowca.",
+      is: "Vegir á Íslandi eru einstakir. Einbreið brýr, skyndileg veðurbreytingar og ómerktar malarvegir krefjast athygli. Hér er það sem sérhver ökumaður þarf að vita.",
+    },
+    items: [
+      {
+        title: { en: "F-Roads Require 4×4", pl: "Drogi F wymagają 4×4", is: "F-vegir krefjast 4×4" },
+        desc: { en: "Highland F-roads are only open in summer (June–Sept) and legally require a 4WD vehicle. Never attempt in a 2WD.", pl: "Drogi F na wyżynach są otwarte tylko latem (czerwiec–wrzesień) i wymagają prawnie pojazdu 4WD.", is: "F-vegir á hálendinu eru aðeins opnir á sumrin (júní–sept.) og krefjast löglega 4WD ökutæki." },
+      },
+      {
+        title: { en: "Speed Limits", pl: "Ograniczenia prędkości", is: "Hraðatakmarkanir" },
+        desc: { en: "90 km/h on paved highways, 80 km/h on gravel roads, 30–50 km/h in towns. Speed cameras are common.", pl: "90 km/h na drogach asfaltowych, 80 km/h na szutrze, 30–50 km/h w miastach. Fotoradary są powszechne.", is: "90 km/klst á malbikaðum þjóðvegum, 80 km/klst á malarvegum, 30–50 km/klst í þéttbýli." },
+      },
+      {
+        title: { en: "Watch for Sheep", pl: "Uważaj na owce", is: "Varist kindur" },
+        desc: { en: "Free-roaming sheep are on roads from June to September. Slow down in rural areas — they can appear suddenly.", pl: "Wolno pasące się owce są na drogach od czerwca do września. Zwolnij na terenach wiejskich.", is: "Frjálsar kindur eru á vegum frá júní til september. Hægðu á þér á dreifbýlissvæðum." },
+      },
+      {
+        title: { en: "Fuel Stations", pl: "Stacje paliw", is: "Bensínstöðvar" },
+        desc: { en: "Gas stations can be 200+ km apart in remote areas. Always fill up before heading to the Westfjords or Highlands.", pl: "Stacje benzynowe mogą być oddalone o 200+ km w odległych rejonach. Tankuj przed Westfjordami i wyżynami.", is: "Bensínstöðvar geta verið 200+ km á milli á afskekktum stöðum. Fylltu alltaf áður en þú fer á Vestfirði eða hálendið." },
+      },
+      {
+        title: { en: "Check road.is Daily", pl: "Sprawdzaj road.is codziennie", is: "Athugaðu road.is daglega" },
+        desc: { en: "Real-time road conditions at road.is. Some roads close without warning due to weather or river flooding.", pl: "Aktualne warunki drogowe na road.is. Niektóre drogi zamykają się bez ostrzeżenia z powodu pogody lub powodzi.", is: "Rauntíma vegaaðstæður á road.is. Sumir vegir lokast án fyrirvara vegna veðurs eða flóða." },
+      },
+      {
+        title: { en: "Winter Driving", pl: "Jazda zimowa", is: "Vetrarakstur" },
+        desc: { en: "Studded tires included Oct–Apr. Keep headlights on 24/7. Black ice and sudden blizzards are common. Carry warm clothes.", pl: "Opony z kolcami w cenie paź–kwi. Światła włączone 24/7. Gołoledź i nagłe zamiecie są częste.", is: "Nagladekkjum innifalin okt–apr. Hafðu ljósin kveikt 24/7. Hálka og skyndileg hríðarveður eru algeng." },
+      },
+    ],
+    safetravel: { en: "SafeTravel.is", pl: "SafeTravel.is", is: "SafeTravel.is" },
+    roadis: { en: "Road.is — Road Conditions", pl: "Road.is — Warunki drogowe", is: "Road.is — Vegaástand" },
+    vedur: { en: "Vedur.is — Weather", pl: "Vedur.is — Pogoda", is: "Vedur.is — Veður" },
   },
   hero: {
     subtitle: {
@@ -53,6 +212,8 @@ export const translations = {
       },
       price: { en: "from €89/day", pl: "od 89€/dzień", is: "frá 89€/dag" },
       bestFor: { en: "Highlands, F-roads, winter", pl: "Wyżyny, drogi F, zima", is: "Hálendi, F-vegir, vetur" },
+      froad: true,
+      minAge: 23,
     },
     camper: {
       name: { en: "Explorer Camper", pl: "Explorer Camper", is: "Explorer Camper" },
@@ -65,6 +226,8 @@ export const translations = {
       },
       price: { en: "from €129/day", pl: "od 129€/dzień", is: "frá 129€/dag" },
       bestFor: { en: "Ring Road, camping, freedom", pl: "Ring Road, camping, wolność", is: "Hringvegur, tjaldsvæði, frelsi" },
+      froad: false,
+      minAge: 25,
     },
     compact: {
       name: { en: "City Smart", pl: "City Smart", is: "City Smart" },
@@ -77,6 +240,8 @@ export const translations = {
       },
       price: { en: "from €39/day", pl: "od 39€/dzień", is: "frá 39€/dag" },
       bestFor: { en: "Golden Circle, city trips", pl: "Golden Circle, miasto", is: "Gullni hringurinn, borgarferðir" },
+      froad: false,
+      minAge: 20,
     },
   },
   routes: {
@@ -204,76 +369,32 @@ export const translations = {
     title: { en: "Common questions", pl: "Częste pytania", is: "Algengar spurningar" },
     items: [
       {
-        q: {
-          en: "Do I need a 4×4 in Iceland?",
-          pl: "Czy potrzebuję 4×4 na Islandii?",
-          is: "Þarf ég 4×4 á Íslandi?",
-        },
-        a: {
-          en: "For Ring Road and Golden Circle, a compact car is fine. For F-roads, highlands, and winter driving, a 4×4 is required by law. We'll help you choose the right vehicle for your route.",
-          pl: "Na Ring Road i Golden Circle wystarczy auto kompaktowe. Na drogi F, wyżyny i jazdę zimową 4×4 jest wymagane prawem. Pomożemy dobrać odpowiedni pojazd do Twojej trasy.",
-          is: "Á Hringveg og Gullna hringinn dugar smábíll. Á F-vegi, hálendi og vetrarakstri er 4×4 krafist samkvæmt lögum. Við hjálpum þér að velja rétta ökutækið.",
-        },
+        q: { en: "Do I need a 4×4 in Iceland?", pl: "Czy potrzebuję 4×4 na Islandii?", is: "Þarf ég 4×4 á Íslandi?" },
+        a: { en: "For Ring Road and Golden Circle, a compact car is fine. For F-roads, highlands, and winter driving, a 4×4 is required by law. We'll help you choose the right vehicle for your route.", pl: "Na Ring Road i Golden Circle wystarczy auto kompaktowe. Na drogi F, wyżyny i jazdę zimową 4×4 jest wymagane prawem. Pomożemy dobrać odpowiedni pojazd do Twojej trasy.", is: "Á Hringveg og Gullna hringinn dugar smábíll. Á F-vegi, hálendi og vetrarakstri er 4×4 krafist samkvæmt lögum. Við hjálpum þér að velja rétta ökutækið." },
       },
       {
-        q: {
-          en: "What insurance is included?",
-          pl: "Jakie ubezpieczenie jest w cenie?",
-          is: "Hvaða trygging er innifalin?",
-        },
-        a: {
-          en: "Every rental includes CDW (Collision Damage Waiver), SCDW (Super CDW), theft protection, gravel protection, and sand & ash insurance. Additional coverage is available.",
-          pl: "Każdy wynajem obejmuje CDW, SCDW, ochronę przed kradzieżą, ochronę przed żwirem oraz ubezpieczenie od piasku i popiołu. Dostępne dodatkowe pokrycie.",
-          is: "Sérhver leiga inniheldur CDW, SCDW, þjófnaðarvernd, malarvörn og sand- og öskutryggingu. Viðbótarvernd er í boði.",
-        },
+        q: { en: "What insurance is included?", pl: "Jakie ubezpieczenie jest w cenie?", is: "Hvaða trygging er innifalin?" },
+        a: { en: "Every rental includes CDW, SCDW, theft protection, gravel protection, and sand & ash insurance. Zero excess on all plans.", pl: "Każdy wynajem obejmuje CDW, SCDW, ochronę przed kradzieżą, ochronę przed żwirem oraz ubezpieczenie od piasku i popiołu. Zero udział własny.", is: "Sérhver leiga inniheldur CDW, SCDW, þjófnaðarvernd, malarvörn og sand- og öskutryggingu. Engin sjálfsábyrgð." },
       },
       {
-        q: {
-          en: "Can I pick up at Keflavík Airport?",
-          pl: "Czy mogę odebrać auto na lotnisku Keflavík?",
-          is: "Get ég sótt bíl á Keflavíkurflugvelli?",
-        },
-        a: {
-          en: "Yes! We offer free 24/7 airport pickup and drop-off at Keflavík International Airport. Our shuttle meets you at arrivals within 10 minutes of your call.",
-          pl: "Tak! Oferujemy darmowy odbiór i zwrot na lotnisku Keflavík 24/7. Nasz shuttle przyjeżdża po Ciebie do 10 minut od telefonu.",
-          is: "Já! Við bjóðum ókeypis flutning 24/7 til og frá Keflavíkurflugvelli. Rútan okkar hittir þig við komu innan 10 mínútna.",
-        },
+        q: { en: "Can I pick up at Keflavík Airport?", pl: "Czy mogę odebrać auto na lotnisku Keflavík?", is: "Get ég sótt bíl á Keflavíkurflugvelli?" },
+        a: { en: "Yes! We offer 24/7 keybox pickup inside the airport terminal. Check in online, land, grab your keys and drive. Zero waiting time.", pl: "Tak! Oferujemy odbiór z keyboxa 24/7 wewnątrz terminala. Zamelduj się online, wyląduj, odbierz kluczyki i jedź. Zero czekania.", is: "Já! Við bjóðum lyklakistu 24/7 inni í flugstöðinni. Skráðu þig inn á netinu, lentu, taktu lyklana og keyrðu. Enginn biðtími." },
       },
       {
-        q: {
-          en: "What happens if the car breaks down?",
-          pl: "Co się stanie, jeśli auto się zepsuje?",
-          is: "Hvað gerist ef bíllinn bilar?",
-        },
-        a: {
-          en: "We provide 24/7 roadside assistance across all of Iceland. Call us anytime and we'll either fix the issue remotely or send a replacement vehicle.",
-          pl: "Zapewniamy pomoc drogową 24/7 na terenie całej Islandii. Zadzwoń o dowolnej porze — naprawimy problem zdalnie lub wyślemy samochód zastępczy.",
-          is: "Við veitum vegaþjónustu 24/7 um allt Ísland. Hringdu hvenær sem er og við lögum málið eða sendum varabíl.",
-        },
+        q: { en: "What happens if the car breaks down?", pl: "Co się stanie, jeśli auto się zepsuje?", is: "Hvað gerist ef bíllinn bilar?" },
+        a: { en: "We provide 24/7 roadside assistance across all of Iceland. Call us anytime and we'll either fix the issue remotely or send a replacement vehicle.", pl: "Zapewniamy pomoc drogową 24/7 na terenie całej Islandii. Zadzwoń o dowolnej porze — naprawimy problem zdalnie lub wyślemy samochód zastępczy.", is: "Við veitum vegaþjónustu 24/7 um allt Ísland. Hringdu hvenær sem er og við lögum málið eða sendum varabíl." },
       },
       {
-        q: {
-          en: "Is there a minimum rental period?",
-          pl: "Czy jest minimalny okres wynajmu?",
-          is: "Er lágmarkleigutími?",
-        },
-        a: {
-          en: "No minimum! Rent for 1 day or 30 — same great daily rate. Discounts kick in at 7+ days (5%) and 14+ days (10%).",
-          pl: "Bez minimum! Wynajmij na 1 dzień lub 30 — ta sama świetna stawka. Rabaty od 7+ dni (5%) i 14+ dni (10%).",
-          is: "Engin lágmark! Leigðu í 1 dag eða 30 — sama frábæra dagverðið. Afsláttur byrjar við 7+ daga (5%) og 14+ daga (10%).",
-        },
+        q: { en: "Is there a minimum rental period?", pl: "Czy jest minimalny okres wynajmu?", is: "Er lágmarkleigutími?" },
+        a: { en: "No minimum! Rent for 1 day or 30 — same great daily rate. Discounts kick in at 7+ days (5%) and 14+ days (10%).", pl: "Bez minimum! Wynajmij na 1 dzień lub 30 — ta sama świetna stawka. Rabaty od 7+ dni (5%) i 14+ dni (10%).", is: "Engin lágmark! Leigðu í 1 dag eða 30 — sama frábæra dagverðið. Afsláttur byrjar við 7+ daga (5%) og 14+ daga (10%)." },
       },
       {
-        q: {
-          en: "Can I drive to the highlands?",
-          pl: "Czy mogę jechać na wyżyny?",
-          is: "Má ég aka á hálendið?",
-        },
-        a: {
-          en: "Yes, with our 4×4 vehicles! Highland F-roads are typically open June–September. We provide detailed maps and current road condition updates before your trip.",
-          pl: "Tak, naszymi 4×4! Drogi F na wyżynach są zazwyczaj otwarte od czerwca do września. Zapewniamy mapy i aktualne informacje o warunkach drogowych.",
-          is: "Já, með okkar 4×4 bílum! F-vegir á hálendinu eru venjulega opnir júní–september. Við útvegum ítarleg kort og vegaupplýsingar.",
-        },
+        q: { en: "Can I drive to the highlands?", pl: "Czy mogę jechać na wyżyny?", is: "Má ég aka á hálendið?" },
+        a: { en: "Yes, with our 4×4 vehicles! Highland F-roads are typically open June–September. We provide detailed maps and current road condition updates before your trip.", pl: "Tak, naszymi 4×4! Drogi F na wyżynach są zazwyczaj otwarte od czerwca do września. Zapewniamy mapy i aktualne informacje o warunkach drogowych.", is: "Já, með okkar 4×4 bílum! F-vegir á hálendinu eru venjulega opnir júní–september. Við útvegum ítarleg kort og vegaupplýsingar." },
+      },
+      {
+        q: { en: "Do you charge a deposit?", pl: "Czy pobieracie depozyt?", is: "Eruð þið með tryggingu?" },
+        a: { en: "No! NordCar is a zero-deposit rental. We don't hold any amount on your credit card. What you see online is what you pay.", pl: "Nie! NordCar to wypożyczalnia bez depozytu. Nie blokujemy żadnej kwoty na Twojej karcie. Co widzisz online, tyle płacisz.", is: "Nei! NordCar er tryggingarlaus leiga. Við höldum engri upphæð á kreditkortinu þínu. Það sem þú sérð á netinu er það sem þú borgar." },
       },
     ],
   },
@@ -288,51 +409,27 @@ export const translations = {
     items: [
       {
         title: { en: "Full insurance suite", pl: "Pełne ubezpieczenie", is: "Full tryggingarskrá" },
-        desc: {
-          en: "CDW, SCDW, gravel protection and sand insurance included.",
-          pl: "CDW, SCDW, gravel protection i ubezpieczenie piaskowe w cenie.",
-          is: "CDW, SCDW, malarvörn og sandtrygging innifalin.",
-        },
+        desc: { en: "CDW, SCDW, gravel, sand & ash protection — all included. Zero excess.", pl: "CDW, SCDW, ochrona żwir, piasek i popiół — wszystko w cenie. Zero udział.", is: "CDW, SCDW, malar-, sand- og öskuvörn — allt innifalið. Engin sjálfsábyrgð." },
       },
       {
-        title: { en: "KEF airport pickup", pl: "Odbiór z lotniska KEF", is: "Sótt á KEF flugvöll" },
-        desc: {
-          en: "Free transfer from Keflavík International Airport 24/7.",
-          pl: "Darmowy transfer z Keflavík International Airport 24/7.",
-          is: "Ókeypis flutningur frá Keflavík alþjóðaflugvelli 24/7.",
-        },
+        title: { en: "Keybox airport pickup", pl: "Keybox na lotnisku", is: "Lyklakista á flugvelli" },
+        desc: { en: "24/7 contactless pickup at KEF. Online check-in, grab keys, drive.", pl: "Bezkonktaktowy odbiór 24/7 na KEF. Check-in online, odbierz kluczyki, jedź.", is: "Snertilausi 24/7 á KEF. Netinnritun, taktu lykla, keyrðu." },
       },
       {
         title: { en: "Winter tyres", pl: "Opony zimowe", is: "Vetrardekk" },
-        desc: {
-          en: "Studded tyres in winter season, all-season in summer.",
-          pl: "Studded tyres w sezonie zimowym, all-season latem.",
-          is: "Nagladekkjum á veturna, heilsársdekk á sumrin.",
-        },
+        desc: { en: "Studded tyres Oct–Apr, all-season in summer. Always road-ready.", pl: "Kolce paź–kwi, całoroczne latem. Zawsze gotowe na drogę.", is: "Nagladekkjum okt–apr, heilsársdekk á sumrin. Alltaf tilbúið." },
       },
       {
         title: { en: "Flexible bookings", pl: "Elastyczne rezerwacje", is: "Sveigjanleg bókun" },
-        desc: {
-          en: "Free cancellation up to 48h before pickup.",
-          pl: "Darmowe anulowanie do 48h przed odbiorem.",
-          is: "Ókeypis afbókun allt að 48 klst. fyrir afhendingu.",
-        },
+        desc: { en: "Free cancellation up to 48h. No prepayment required. Pay on arrival option.", pl: "Darmowe anulowanie do 48h. Bez przedpłat. Opcja płatności przy odbiorze.", is: "Ókeypis afbókun 48 klst. Engin fyrirframgreiðsla. Greiðsla við afhendingu." },
       },
       {
-        title: { en: "24/7 support", pl: "Wsparcie 24/7", is: "Aðstoð 24/7" },
-        desc: {
-          en: "Roadside assistance and phone support across the island.",
-          pl: "Pomoc drogowa i wsparcie telefoniczne na całej wyspie.",
-          is: "Vegaþjónusta og símaþjónusta um alla eyjuna.",
-        },
+        title: { en: "24/7 roadside assistance", pl: "Pomoc drogowa 24/7", is: "Vegaþjónusta 24/7" },
+        desc: { en: "Phone support and roadside rescue across all of Iceland, including highlands.", pl: "Wsparcie telefoniczne i pomoc drogowa na całej Islandii, włącznie z wyżynami.", is: "Símaþjónusta og vegabjörgun um allt Ísland, þar með talið hálendið." },
       },
       {
         title: { en: "No hidden fees", pl: "Bez ukrytych kosztów", is: "Engin falinn kostnaður" },
-        desc: {
-          en: "Transparent pricing. No surprises at pickup.",
-          pl: "Przejrzyste ceny. Bez niespodzianek przy odbiorze.",
-          is: "Gagnsæ verðlagning. Engar óvæntar gjaldskrár.",
-        },
+        desc: { en: "Transparent pricing. No surprise charges at pickup or drop-off. Ever.", pl: "Przejrzyste ceny. Żadnych niespodziewanych opłat przy odbiorze lub zwrocie. Nigdy.", is: "Gagnsæ verðlagning. Engin óvænt gjöld við afhendingu eða skil. Aldrei." },
       },
     ],
   },
