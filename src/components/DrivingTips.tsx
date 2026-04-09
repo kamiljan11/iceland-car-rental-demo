@@ -1,0 +1,76 @@
+import { AlertTriangle, Gauge, Eye, Fuel, Navigation, ThermometerSnowflake } from "lucide-react";
+import { useLang } from "@/i18n/LanguageContext";
+import { translations as t } from "@/i18n/translations";
+
+const tipIcons = [AlertTriangle, Gauge, Eye, Fuel, Navigation, ThermometerSnowflake];
+
+const DrivingTips = () => {
+  const { lang } = useLang();
+
+  return (
+    <section className="py-24 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-primary font-medium tracking-[0.3em] uppercase text-sm mb-3">
+            {t.drivingTips.label[lang]}
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+            {t.drivingTips.title[lang]}
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            {t.drivingTips.desc[lang]}
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {t.drivingTips.items.map((tip, i) => {
+            const Icon = tipIcons[i];
+            return (
+              <div
+                key={i}
+                className="bg-card border border-border rounded-xl p-6 hover:border-accent/30 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                  <Icon className="w-5 h-5 text-accent" />
+                </div>
+                <h3 className="font-semibold text-base mb-2">{tip.title[lang]}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{tip.desc[lang]}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href="https://safetravel.is"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary text-sm font-medium hover:underline"
+          >
+            {t.drivingTips.safetravel[lang]} →
+          </a>
+          <span className="mx-4 text-border">|</span>
+          <a
+            href="https://road.is"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary text-sm font-medium hover:underline"
+          >
+            {t.drivingTips.roadis[lang]} →
+          </a>
+          <span className="mx-4 text-border">|</span>
+          <a
+            href="https://vedur.is"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary text-sm font-medium hover:underline"
+          >
+            {t.drivingTips.vedur[lang]} →
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default DrivingTips;
