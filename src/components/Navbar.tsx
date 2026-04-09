@@ -1,4 +1,4 @@
-import { Mountain } from "lucide-react";
+import { Mountain, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/i18n/LanguageContext";
 import type { Lang } from "@/i18n/translations";
@@ -19,22 +19,25 @@ const Navbar = () => {
             NordCar Iceland
           </span>
         </div>
-        <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+        <div className="hidden lg:flex items-center gap-6 text-sm text-muted-foreground">
           <a href="#fleet" className="hover:text-foreground transition-colors">
             {t.nav.fleet[lang]}
           </a>
-          <a href="#" className="hover:text-foreground transition-colors">
+          <a href="#routes" className="hover:text-foreground transition-colors">
             {t.nav.routes[lang]}
           </a>
           <a href="#" className="hover:text-foreground transition-colors">
-            {t.nav.pricing[lang]}
+            {t.nav.insurance[lang]}
+          </a>
+          <a href="#" className="hover:text-foreground transition-colors">
+            {t.nav.driving[lang]}
           </a>
           <a href="#" className="hover:text-foreground transition-colors">
             {t.nav.contact[lang]}
           </a>
         </div>
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1 bg-secondary/60 rounded-full p-1">
+          <div className="hidden sm:flex items-center gap-1 bg-secondary/60 rounded-full p-1">
             {langs.map((l) => (
               <button
                 key={l}
@@ -49,6 +52,9 @@ const Navbar = () => {
               </button>
             ))}
           </div>
+          <Button variant="outline" size="sm" className="hidden md:inline-flex text-xs border-border/50">
+            {t.nav.manage[lang]}
+          </Button>
           <Button size="sm" className="text-sm">
             {t.nav.book[lang]}
           </Button>
