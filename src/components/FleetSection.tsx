@@ -1,7 +1,7 @@
 import carSuv from "@/assets/car-suv.jpg";
 import carCamper from "@/assets/car-camper.jpg";
 import carCompact from "@/assets/car-compact.jpg";
-import { Users, Fuel, Snowflake } from "lucide-react";
+import { Users, Fuel, Snowflake, MapPin } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
 
@@ -53,7 +53,7 @@ const FleetSection = () => {
                   <p className="text-muted-foreground text-sm mb-4">
                     {v.subtitle[lang]}
                   </p>
-                  <div className="flex flex-wrap gap-3 mb-6">
+                  <div className="flex flex-wrap gap-3 mb-4">
                     {v.features[lang].map((f, i) => {
                       const Icon = icons[i];
                       return (
@@ -67,7 +67,11 @@ const FleetSection = () => {
                       );
                     })}
                   </div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-5">
+                    <MapPin className="w-3.5 h-3.5 text-accent" />
+                    <span>{t.fleet.bestFor[lang]} {v.bestFor[lang]}</span>
+                  </div>
+                  <div className="flex items-center justify-between pt-4 border-t border-border">
                     <span className="text-primary font-bold text-lg">
                       {v.price[lang]}
                     </span>
