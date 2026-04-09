@@ -131,7 +131,7 @@ export const translations = {
         difficulty: { en: "Easy", pl: "Łatwa", is: "Auðveld" },
         desc: {
           en: "\"Iceland in miniature\" — Kirkjufell, lava fields, black beaches and the mythical Snæfellsjökull glacier.",
-          pl: "„Islandia w miniaturze" — Kirkjufell, pola lawowe, czarne plaże i mityczny lodowiec Snæfellsjökull.",
+          pl: "Islandia w miniaturze — Kirkjufell, pola lawowe, czarne plaże i mityczny lodowiec Snæfellsjökull.",
           is: "\"Ísland í smækkuðu formi\" — Kirkjufell, hraunbreiður, svartir strandir og goðsagnakenndur Snæfellsjökull.",
         },
         vehicle: { en: "Any vehicle", pl: "Dowolny pojazd", is: "Hvaða bíll sem er" },
