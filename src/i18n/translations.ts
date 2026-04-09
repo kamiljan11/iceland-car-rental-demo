@@ -145,15 +145,27 @@ export const translations = {
     ],
   },
   cta: {
-    title1: { en: "Want something", pl: "Chcesz coś", is: "Viltu eitthvað" },
-    title2: { en: "like this for yourself?", pl: "takiego dla siebie?", is: "svona fyrir þig?" },
+    label: { en: "BUSINESS AUTOPILOT", pl: "BUSINESS AUTOPILOT", is: "BUSINESS AUTOPILOT" },
+    title1: { en: "Want a Website Like This", pl: "Chcesz taką stronę", is: "Viltu svona vefsíðu" },
+    title2: { en: "For Your Rental?", pl: "Dla swojej wypożyczalni?", is: "Fyrir þína bílaleigu?" },
     desc: {
-      en: "We create complete booking websites, fleet systems and branding for car rental companies. Get in touch — we'll build it together.",
-      pl: "Tworzymy kompletne strony rezerwacyjne, systemy flotowe i branding dla wypożyczalni samochodów. Skontaktuj się z nami — zbudujemy to razem.",
-      is: "Við búum til fullkomnar bókunarsíður, bílaflotakerfi og vörumerki fyrir bílaleigur. Hafðu samband — við byggjum þetta saman.",
+      en: "We build stunning, personalised websites for car rentals, tour operators, and travel businesses. Everything done for you — website, photos, ads, social media. One plan. Zero stress.",
+      pl: "Tworzymy piękne, spersonalizowane strony dla wypożyczalni, touroperatorów i firm turystycznych. Wszystko zrobimy za Ciebie — stronę, zdjęcia, reklamy, social media. Jeden plan. Zero stresu.",
+      is: "Við búum til glæsilegar, sérsniðnar vefsíður fyrir bílaleigur, ferðaskrifstofur og ferðafyrirtæki. Allt gert fyrir þig — vefsíða, myndir, auglýsingar, samfélagsmiðlar. Eitt pakki. Enginn stress.",
     },
-    cta1: { en: "Order your site", pl: "Zamów swoją stronę", is: "Pantaðu síðuna þína" },
-    cta2: { en: "See more demos", pl: "Zobacz więcej demo", is: "Sjá fleiri sýnidæmi" },
+    features: {
+      f1: { en: "Custom Website", pl: "Strona na zamówienie", is: "Sérsniðin vefsíða" },
+      f2: { en: "Professional Photos", pl: "Profesjonalne zdjęcia", is: "Fagmyndir" },
+      f3: { en: "Social Media Ads", pl: "Reklamy social media", is: "Samfélagsmiðlaauglýsingar" },
+      f4: { en: "All-In-One Plan", pl: "Pakiet all-in-one", is: "Allt-í-einu pakki" },
+    },
+    cta1: { en: "GET STARTED", pl: "ROZPOCZNIJ", is: "BYRJAÐU" },
+    price: { en: "From only 199 €/month", pl: "Już od 199 €/mies.", is: "Frá aðeins 199 €/mán." },
+    badges: {
+      b1: { en: "Live in 7 days", pl: "Gotowe w 7 dni", is: "Tilbúið á 7 dögum" },
+      b2: { en: "Fully personalised", pl: "W pełni spersonalizowane", is: "Fullkomlega sérsniðið" },
+      b3: { en: "No long-term contracts", pl: "Bez długich umów", is: "Engir langtímasamningar" },
+    },
   },
   footer: {
     desc: {
