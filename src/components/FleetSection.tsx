@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import DotGrid from "@/components/svg/DotGrid";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
 import DemoDialog from "@/components/DemoDialog";
@@ -75,8 +76,9 @@ const FleetSection = () => {
 
   return (
     <>
-      <section id="fleet" className="py-20 sm:py-32 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
+      <section id="fleet" className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
+        <DotGrid className="text-primary" />
+        <div className="max-w-7xl mx-auto relative">
           <p className="text-primary font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-2 sm:mb-3">
             {t.fleet.label[lang]}
           </p>

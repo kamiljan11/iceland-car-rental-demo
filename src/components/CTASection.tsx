@@ -6,6 +6,7 @@ import { useState } from "react";
 import DemoDialog from "@/components/DemoDialog";
 import IcelandOutline from "@/components/svg/IcelandOutline";
 import CompassRose from "@/components/svg/CompassRose";
+import AuroraGlow from "@/components/svg/AuroraGlow";
 
 const CTASection = () => {
   const { lang } = useLang();
@@ -15,6 +16,7 @@ const CTASection = () => {
     <>
       <section className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
         {/* Decorative background SVGs */}
+        <AuroraGlow position="center" />
         <IcelandOutline className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary" size={400} />
         <CompassRose className="absolute bottom-8 right-8 sm:right-16 text-muted-foreground" size={40} />
 
