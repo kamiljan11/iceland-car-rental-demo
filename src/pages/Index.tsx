@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
 import USPSection from "@/components/USPSection";
 import FleetSection from "@/components/FleetSection";
-import RoutesSection from "@/components/RoutesSection";
+import ItinerarySection from "@/components/RoutesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
@@ -20,7 +20,7 @@ const Index = () => {
       <USPSection />
       <FleetSection />
       <NorthernLightsWave className="h-16 sm:h-24 -mb-1 rotate-180" />
-      <RoutesSection />
+      <ItinerarySection />
       <TestimonialsSection />
       <NorthernLightsWave className="h-12 sm:h-16 -mb-1" />
       <FAQSection />
