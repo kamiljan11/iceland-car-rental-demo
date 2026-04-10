@@ -52,11 +52,11 @@ const VehicleDetailDialog = ({ open, onOpenChange, vehicleKey, images }: Vehicle
       <Dialog open={open} onOpenChange={(o) => { onOpenChange(o); if (!o) setImgIdx(0); }}>
         <DialogContent className="max-w-2xl p-0 overflow-hidden gap-0 max-h-[90vh] overflow-y-auto">
           {/* Image gallery */}
-          <div className="relative bg-secondary/30 aspect-[4/3] group/detail">
+          <div className="relative bg-secondary/30 aspect-[3/4] sm:aspect-[4/3] group/detail">
             <img
               src={imgs[imgIdx] || ""}
               alt={v.name[lang]}
-              className="w-full h-full object-contain bg-secondary/20 transition-all duration-500"
+              className="w-full h-full object-cover bg-secondary/20 transition-all duration-500"
             />
             <span className="absolute top-3 left-3 bg-primary/90 text-primary-foreground text-[10px] sm:text-xs font-medium px-2.5 py-1 rounded-full">
               {v.tag[lang]}
