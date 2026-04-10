@@ -11,7 +11,7 @@ const BookingWidget = () => {
 
   return (
     <>
-      <div className="bg-card/90 backdrop-blur-lg border border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 w-full max-w-4xl">
+      <div className="bg-card/90 backdrop-blur-lg border border-border rounded-xl sm:rounded-2xl p-5 sm:p-8 w-full max-w-5xl">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
           <div className="flex flex-col gap-1 col-span-2 lg:col-span-1">
             <label className="text-[10px] sm:text-xs text-primary font-medium uppercase tracking-wider">
