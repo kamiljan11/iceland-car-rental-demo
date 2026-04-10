@@ -8,18 +8,18 @@ const rows: {
   them: "extra" | "seasonal" | boolean;
   saved?: string;
 }[] = [
-  { feature: { en: "CDW Insurance", pl: "Ubezpieczenie CDW", is: "CDW trygging" }, us: true, them: "extra" },
-  { feature: { en: "SCDW (Super CDW)", pl: "SCDW (Super CDW)", is: "SCDW" }, us: true, them: "extra" },
-  { feature: { en: "Gravel Protection", pl: "Ochrona przed żwirem", is: "Malarvörn" }, us: true, them: "extra" },
+  { feature: { en: "CDW Insurance", pl: "Ubezpieczenie CDW", is: "CDW trygging" }, us: true, them: "extra", saved: "~€15/day" },
+  { feature: { en: "SCDW (Super CDW)", pl: "SCDW (Super CDW)", is: "SCDW" }, us: true, them: "extra", saved: "~€20/day" },
+  { feature: { en: "Gravel Protection", pl: "Ochrona przed żwirem", is: "Malarvörn" }, us: true, them: "extra", saved: "~€12/day" },
   { feature: { en: "Sand & Ash Protection", pl: "Ochrona przed piaskiem", is: "Sand- og öskuvörn" }, us: true, them: false },
   { feature: { en: "Zero Excess", pl: "Zerowy udział własny", is: "Engin sjálfsábyrgð" }, us: true, them: false },
   { feature: { en: "Zero Deposit Hold", pl: "Bez blokady depozytu", is: "Engin tryggingafjárhæð" }, us: true, them: false },
-  { feature: { en: "Portable Wi-Fi", pl: "Przenośne Wi-Fi", is: "Ferða-WiFi" }, us: true, them: "extra", saved: "€8/day" },
-  { feature: { en: "GPS Navigation", pl: "Nawigacja GPS", is: "GPS leiðsögn" }, us: true, them: "extra", saved: "€5/day" },
-  { feature: { en: "Winter Tyres & Studs", pl: "Opony zimowe i kolce", is: "Vetrardekk og broddar" }, us: true, them: "seasonal", saved: "€10/day" },
-  { feature: { en: "Child Seats", pl: "Foteliki dziecięce", is: "Barnastólar" }, us: true, them: "extra", saved: "€7/day" },
-  { feature: { en: "Full Insurance Bundle", pl: "Pełny pakiet ubezpieczeń", is: "Full tryggingapakki" }, us: true, them: "extra", saved: "€25/day" },
-  { feature: { en: "24/7 Roadside Assist", pl: "Pomoc drogowa 24/7", is: "24/7 vegahjálp" }, us: true, them: "extra", saved: "€6/day" },
+  { feature: { en: "Portable Wi-Fi", pl: "Przenośne Wi-Fi", is: "Ferða-WiFi" }, us: true, them: "extra", saved: "~€8/day" },
+  { feature: { en: "GPS Navigation", pl: "Nawigacja GPS", is: "GPS leiðsögn" }, us: true, them: "extra", saved: "~€5/day" },
+  { feature: { en: "Winter Tyres & Studs", pl: "Opony zimowe i kolce", is: "Vetrardekk og broddar" }, us: true, them: "extra", saved: "~€10/day" },
+  { feature: { en: "Child Seats", pl: "Foteliki dziecięce", is: "Barnastólar" }, us: true, them: "extra", saved: "~€7/day" },
+  { feature: { en: "Full Insurance Bundle", pl: "Pełny pakiet ubezpieczeń", is: "Full tryggingapakki" }, us: true, them: "extra", saved: "~€25/day" },
+  { feature: { en: "24/7 Roadside Assist", pl: "Pomoc drogowa 24/7", is: "24/7 vegahjálp" }, us: true, them: "extra", saved: "~€6/day" },
 ];
 
 const InsuranceCompare = () => {
