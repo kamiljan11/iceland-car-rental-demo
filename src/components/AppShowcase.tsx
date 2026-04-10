@@ -4,6 +4,7 @@ import { useLang } from "@/i18n/LanguageContext";
 import type { Lang } from "@/i18n/translations";
 
 const features = [
+  { icon: Route, label: { en: "AI Route Planner", pl: "Planer tras AI", is: "AI leiðarskipulag" }, highlight: true },
   { icon: Navigation, label: { en: "Offline Maps", pl: "Mapy offline", is: "Ónettengd kort" } },
   { icon: Sparkles, label: { en: "Aurora Alerts", pl: "Alerty zorzy", is: "Norðurljósaviðvaranir" } },
   { icon: Mountain, label: { en: "Hiking Trails", pl: "Szlaki", is: "Gönguleiðir" } },
