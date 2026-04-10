@@ -27,8 +27,27 @@ const VehicleDetailDialog = ({ open, onOpenChange, vehicleKey, images }: Vehicle
   const { lang } = useLang();
   const [imgIdx, setImgIdx] = useState(0);
   const [bookingOpen, setBookingOpen] = useState(false);
+  const [bookingVehicle, setBookingVehicle] = useState<{ name: string; price: string } | null>(null);
 
-  if (!vehicleKey) return null;
+  // Store vehicle info for booking before closing detail dialog
+  const handleBookClick = () => {
+    if (!vehicleKey) return;
+    const v = t.vehicles[vehicleKey];
+    setBookingVehicle({ name: v.name[lang], price: v.price[lang] });
+    onOpenChange(false);
+    setTimeout(() => setBookingOpen(true), 300);
+  };
+
+  const bookingDialog = (
+    <BookingSimDialog
+      open={bookingOpen}
+      onOpenChange={setBookingOpen}
+      vehicleName={bookingVehicle?.name || ""}
+      vehiclePrice={bookingVehicle?.price || ""}
+    />
+  );
+
+  if (!vehicleKey) return bookingDialog;
 
   const v = t.vehicles[vehicleKey];
   const dm = t.fleet.detailModal;
@@ -154,19 +173,14 @@ const VehicleDetailDialog = ({ open, onOpenChange, vehicleKey, images }: Vehicle
             {/* CTA */}
             <Button
               className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base"
-              onClick={() => { onOpenChange(false); setTimeout(() => setBookingOpen(true), 300); }}
+              onClick={handleBookClick}
             >
               {dm.bookThis[lang]}
             </Button>
           </div>
         </DialogContent>
       </Dialog>
-      <BookingSimDialog
-        open={bookingOpen}
-        onOpenChange={setBookingOpen}
-        vehicleName={v.name[lang]}
-        vehiclePrice={v.price[lang]}
-      />
+      {bookingDialog}
     </>
   );
 };
