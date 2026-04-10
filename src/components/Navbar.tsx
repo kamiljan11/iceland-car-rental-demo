@@ -122,7 +122,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <DemoDialog open={demo} onOpenChange={setDemo} />
+      <DemoDialog open={demo} onOpenChange={setDemo} feature="book" />
     </>
   );
 };
