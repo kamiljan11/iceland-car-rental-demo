@@ -1,6 +1,5 @@
 import { Check, X } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
-import AuroraGlow from "@/components/svg/AuroraGlow";
 
 const rows = [
   { feature: { en: "CDW Insurance", pl: "Ubezpieczenie CDW", is: "CDW trygging" }, us: true, them: "extra" },
@@ -17,7 +16,6 @@ const rows = [
 const InsuranceCompare = () => {
   const { lang } = useLang();
   const labels = {
-    label: { en: "Full coverage, zero surprises", pl: "Pełne pokrycie, zero niespodzianek", is: "Full vernd, engar óvart" },
     title: { en: "What's included vs. others", pl: "Co jest w cenie vs. konkurencja", is: "Hvað er innifalið vs. aðrir" },
     us: { en: "NordCar", pl: "NordCar", is: "NordCar" },
     them: { en: "Others", pl: "Konkurencja", is: "Aðrir" },
@@ -26,19 +24,12 @@ const InsuranceCompare = () => {
   };
 
   return (
-    <section id="insurance" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden">
-      <AuroraGlow position="bottom-left" />
-      <div className="max-w-3xl mx-auto relative">
-        <div className="text-center mb-10 sm:mb-14">
-          <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs sm:text-sm mb-2">
-            {labels.label[lang]}
-          </p>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
-            {labels.title[lang]}
-          </h2>
-        </div>
-        <div className="rounded-2xl border border-border overflow-hidden">
-          {/* Header */}
+    <section id="insurance" className="py-14 sm:py-20 px-4 sm:px-6">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10">
+          {labels.title[lang]}
+        </h2>
+        <div className="rounded-xl border border-border overflow-hidden">
           <div className="grid grid-cols-[1fr_80px_80px] sm:grid-cols-[1fr_120px_120px] bg-secondary/50 px-4 sm:px-6 py-3 text-xs sm:text-sm font-semibold">
             <span />
             <span className="text-center text-primary">{labels.us[lang]}</span>

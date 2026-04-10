@@ -1,7 +1,6 @@
 import { Clock, MapPin, Mountain, Car } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
-import TopoLines from "@/components/svg/TopoLines";
 
 import routeRingRoad from "@/assets/route-ringroad.jpg";
 import routeGoldenCircle from "@/assets/route-goldencircle.jpg";
@@ -52,26 +51,22 @@ const ItinerarySection = () => {
   const it = t.itinerary;
 
   return (
-    <section id="routes" className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
-      <TopoLines className="absolute top-0 right-0 w-[500px] h-[400px] text-primary" />
-      <div className="max-w-7xl mx-auto relative">
-        <p className="text-primary font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-2 sm:mb-3">
-          {it.label[lang]}
-        </p>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
+    <section id="routes" className="py-14 sm:py-20 px-4 sm:px-6 bg-secondary/30">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
           {it.title[lang]}
         </h2>
-        <p className="text-muted-foreground text-base sm:text-lg max-w-xl mb-12 sm:mb-16">
+        <p className="text-muted-foreground text-sm sm:text-base max-w-xl mb-8 sm:mb-10">
           {it.desc[lang]}
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
           {routes.map((route, i) => (
             <div
               key={i}
-              className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-300"
+              className="group bg-card rounded-xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-300"
             >
-              <div className="relative h-48 sm:h-56 overflow-hidden">
+              <div className="relative h-44 sm:h-52 overflow-hidden">
                 <img
                   src={route.img}
                   alt={route.name[lang]}
@@ -81,28 +76,28 @@ const ItinerarySection = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground">
+                <div className="absolute bottom-3 left-4">
+                  <h3 className="font-display text-lg sm:text-xl font-bold text-foreground">
                     {route.name[lang]}
                   </h3>
                 </div>
               </div>
-              <div className="p-5 sm:p-6">
-                <div className="flex flex-wrap gap-3 mb-4">
-                  <div className="flex items-center gap-1.5 text-muted-foreground text-xs sm:text-sm">
+              <div className="p-4 sm:p-5">
+                <div className="flex flex-wrap gap-3 mb-3">
+                  <div className="flex items-center gap-1.5 text-muted-foreground text-xs">
                     <Clock className="w-3.5 h-3.5 text-primary" />
                     <span>{route.days} {lang === "en" ? "days" : lang === "pl" ? "dni" : "dagar"}</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-muted-foreground text-xs sm:text-sm">
+                  <div className="flex items-center gap-1.5 text-muted-foreground text-xs">
                     <MapPin className="w-3.5 h-3.5 text-primary" />
                     <span>{route.km} km</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-muted-foreground text-xs sm:text-sm">
+                  <div className="flex items-center gap-1.5 text-muted-foreground text-xs">
                     <Mountain className="w-3.5 h-3.5 text-primary" />
                     <span>{route.difficulty[lang]}</span>
                   </div>
                 </div>
-                <p className="text-secondary-foreground text-sm mb-3">{route.highlights[lang]}</p>
+                <p className="text-secondary-foreground text-xs sm:text-sm mb-2">{route.highlights[lang]}</p>
                 <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                   <Car className="w-3.5 h-3.5 text-accent" />
                   <span>{lang === "en" ? "Recommended" : lang === "pl" ? "Zalecane" : "Mælt með"}: <strong className="text-foreground">{route.recommended[lang]}</strong></span>
