@@ -12,11 +12,11 @@ const TestimonialsSection = () => {
           {t.testimonials.title[lang]}
         </h2>
 
-        <div className="flex overflow-x-auto gap-4 sm:gap-5 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 md:grid md:grid-cols-3 md:overflow-visible scrollbar-hide">
+        <div className="flex overflow-x-auto gap-4 sm:gap-5 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 md:grid md:grid-cols-3 md:overflow-visible scrollbar-hide snap-x snap-mandatory">
           {t.testimonials.items.map((item, i) => (
             <div
               key={i}
-              className="bg-card border border-border rounded-xl p-5 sm:p-6 flex flex-col shrink-0 w-[280px] sm:w-auto"
+              className="bg-card border border-border rounded-xl p-5 sm:p-6 flex flex-col shrink-0 w-[85vw] sm:w-auto snap-start"
             >
               <div className="flex gap-0.5 mb-3">
                 {Array.from({ length: item.rating }).map((_, j) => (

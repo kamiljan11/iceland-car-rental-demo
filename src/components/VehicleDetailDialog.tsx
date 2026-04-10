@@ -69,7 +69,7 @@ const VehicleDetailDialog = ({ open, onOpenChange, vehicleKey, images }: Vehicle
   return (
     <>
       <Dialog open={open} onOpenChange={(o) => { onOpenChange(o); if (!o) setImgIdx(0); }}>
-        <DialogContent className="max-w-2xl p-0 overflow-hidden gap-0 max-h-[90vh] overflow-y-auto custom-scrollbar">
+        <DialogContent className="max-w-2xl p-0 overflow-hidden gap-0 max-h-[100dvh] sm:max-h-[90vh] overflow-y-auto custom-scrollbar sm:rounded-xl rounded-none w-full h-full sm:h-auto sm:w-auto">
           {/* Image gallery */}
           <div className="relative bg-secondary/30 aspect-[16/10] group/detail">
             <img
