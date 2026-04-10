@@ -102,7 +102,7 @@ const BookingSimDialog = ({ open, onOpenChange, vehicleName, vehiclePrice }: Boo
   return (
     <>
       <Dialog open={open} onOpenChange={handleClose}>
-        <DialogContent className="max-w-lg z-[60] max-h-[90vh] overflow-y-auto custom-scrollbar p-0 gap-0">
+        <DialogContent className="max-w-lg z-[60] max-h-[100dvh] sm:max-h-[90vh] overflow-y-auto custom-scrollbar p-0 gap-0 sm:rounded-xl rounded-none w-full h-full sm:h-auto sm:w-auto">
           <div className="p-5 sm:p-6 space-y-5">
             <DialogHeader>
               <DialogTitle className="font-display text-xl">{labels.title[lang]}</DialogTitle>
