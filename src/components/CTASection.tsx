@@ -15,7 +15,7 @@ const CTASection = () => {
 
   return (
     <>
-      <section className="py-20 sm:py-28 px-4 sm:px-6 bg-card border-t border-border/30">
+      <section className="py-14 sm:py-20 px-4 sm:px-6 bg-card border-t border-border/30">
         <div className="max-w-3xl mx-auto text-center">
           {/* Label */}
           <span className="inline-block text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-primary mb-6">
