@@ -26,7 +26,7 @@ const fuelLabels: Record<string, string> = { diesel: "Diesel", petrol: "Petrol",
 const VehicleDetailDialog = ({ open, onOpenChange, vehicleKey, images }: VehicleDetailDialogProps) => {
   const { lang } = useLang();
   const [imgIdx, setImgIdx] = useState(0);
-  const [demoOpen, setDemoOpen] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
 
   if (!vehicleKey) return null;
 
@@ -144,14 +144,19 @@ const VehicleDetailDialog = ({ open, onOpenChange, vehicleKey, images }: Vehicle
             {/* CTA */}
             <Button
               className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base"
-              onClick={() => { onOpenChange(false); setDemoOpen(true); }}
+              onClick={() => { onOpenChange(false); setBookingOpen(true); }}
             >
               {dm.bookThis[lang]}
             </Button>
           </div>
         </DialogContent>
       </Dialog>
-      <DemoDialog open={demoOpen} onOpenChange={setDemoOpen} feature="book" />
+      <BookingSimDialog
+        open={bookingOpen}
+        onOpenChange={setBookingOpen}
+        vehicleName={v.name[lang]}
+        vehiclePrice={v.price[lang]}
+      />
     </>
   );
 };
