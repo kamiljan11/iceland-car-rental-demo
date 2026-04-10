@@ -515,18 +515,18 @@ export const translations = {
     title1: { en: "Want a Website Like This", pl: "Chcesz taką stronę", is: "Viltu svona vefsíðu" },
     title2: { en: "For Your Rental?", pl: "Dla swojej wypożyczalni?", is: "Fyrir þína bílaleigu?" },
     desc: {
-      en: "Website, photos, ads, social media — all done for you. One plan, zero stress.",
-      pl: "Strona, zdjęcia, reklamy, social media — wszystko za Ciebie. Jeden plan, zero stresu.",
-      is: "Vefsíða, myndir, auglýsingar, samfélagsmiðlar — allt gert fyrir þig. Eitt pakki, enginn stress.",
+      en: "Website, photos, ads, social media, and your own domain — all done for you. One plan, zero stress.",
+      pl: "Strona, zdjęcia, reklamy, social media i własna domena — wszystko za Ciebie. Jeden plan, zero stresu.",
+      is: "Vefsíða, myndir, auglýsingar, samfélagsmiðlar og eigið lén — allt gert fyrir þig. Eitt pakki, enginn stress.",
     },
     features: {
       f1: { en: "Custom Website", pl: "Strona na zamówienie", is: "Sérsniðin vefsíða" },
       f2: { en: "Professional Photos", pl: "Profesjonalne zdjęcia", is: "Fagmyndir" },
       f3: { en: "Social Media Ads", pl: "Reklamy social media", is: "Samfélagsmiðlaauglýsingar" },
-      f4: { en: "All-In-One Plan", pl: "Pakiet all-in-one", is: "Allt-í-einu pakki" },
+      f4: { en: "Custom Domain Included", pl: "Własna domena w cenie", is: "Eigið lén innifalið" },
     },
     cta1: { en: "GET STARTED", pl: "ROZPOCZNIJ", is: "BYRJAÐU" },
-    price: { en: "From only 199 €/month", pl: "Już od 199 €/mies.", is: "Frá aðeins 199 €/mán." },
+    price: { en: "From only 19 990 ISK/month", pl: "Już od 19 990 ISK/mies.", is: "Frá aðeins 19 990 ISK/mán." },
     badges: {
       b1: { en: "Live in 7 days", pl: "Gotowe w 7 dni", is: "Tilbúið á 7 dögum" },
       b2: { en: "Fully personalised", pl: "W pełni spersonalizowane", is: "Fullkomlega sérsniðið" },
