@@ -5,6 +5,7 @@ import routeSnaefellsnes from "@/assets/route-snaefellsnes.jpg";
 import { Clock, MapPin } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
+import TopoLines from "@/components/svg/TopoLines";
 
 const images = [routeRingRoad, routeGoldenCircle, routeWestfjords, routeSnaefellsnes];
 
@@ -12,7 +13,8 @@ const RoutesSection = () => {
   const { lang } = useLang();
 
   return (
-    <section id="routes" className="py-20 sm:py-32 px-4 sm:px-6">
+    <section id="routes" className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
+      <TopoLines className="absolute top-0 right-0 w-[500px] h-[400px] text-primary" />
       <div className="max-w-7xl mx-auto">
         <p className="text-primary font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-2 sm:mb-3">
           {t.routes.label[lang]}
