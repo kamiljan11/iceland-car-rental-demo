@@ -2,13 +2,15 @@ import { Star } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
 import Snowflake from "@/components/svg/Snowflake";
+import AuroraGlow from "@/components/svg/AuroraGlow";
 
 const TestimonialsSection = () => {
   const { lang } = useLang();
 
   return (
     <section className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
-      {/* Scattered snowflakes */}
+      {/* Ambient glow */}
+      <AuroraGlow position="bottom-left" />
       <Snowflake className="absolute top-16 left-[10%] text-primary" size={20} />
       <Snowflake className="absolute top-1/3 right-[8%] text-accent" size={16} />
       <Snowflake className="absolute bottom-24 left-[20%] text-primary" size={14} />
