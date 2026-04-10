@@ -27,7 +27,6 @@ const Index = () => {
       <PickupProcess />
       <InsuranceCompare />
       <AppShowcase />
-      <ItinerarySection />
       <DrivingTips />
       <TeamSection />
       <TestimonialsSection />

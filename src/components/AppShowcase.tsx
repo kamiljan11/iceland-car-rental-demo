@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MapPin, Navigation, Cloud, Sparkles, Zap, Mountain, Phone, Camera } from "lucide-react";
+import { MapPin, Navigation, Cloud, Sparkles, Zap, Mountain, Phone, Camera, Route } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import type { Lang } from "@/i18n/translations";
 
