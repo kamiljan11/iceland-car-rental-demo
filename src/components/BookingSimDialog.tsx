@@ -244,12 +244,6 @@ const BookingSimDialog = ({ open, onOpenChange, vehicleName, vehiclePrice }: Boo
                       <span className="text-muted-foreground">{vehiclePrice} × {days} {lang === "pl" ? "dni" : lang === "is" ? "dagar" : "days"}</span>
                       <span className="font-medium">€{days * priceNum}</span>
                     </div>
-                    {extrasTotal > 0 && (
-                      <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">{labels.optionalExtras[lang]}</span>
-                        <span className="font-medium">€{extrasTotal}</span>
-                      </div>
-                    )}
                     <div className="flex justify-between text-sm border-t border-border/50 pt-2">
                       <span className="font-semibold">{labels.total[lang]}</span>
                       <span className="font-bold text-primary text-lg">€{total}</span>
