@@ -17,6 +17,12 @@ const screens = [
     desc: { en: "Hourly forecasts along your route. Wind, ice, and visibility alerts before you drive.", pl: "Prognoza godzinowa na trasie. Alerty wiatru, lodu i widoczności.", is: "Klukkutímaspá á leiðinni. Vindur, ís og skyggni viðvaranir." },
   },
   {
+    id: "secrets",
+    tab: { en: "Secrets", pl: "Sekrety", is: "Leyndarmál" },
+    title: { en: "Secret location alerts", pl: "Alerty o ukrytych miejscach", is: "Viðvaranir um leynda staði" },
+    desc: { en: "GPS-triggered alerts near hidden hot springs, viewpoints, and local spots tourists miss.", pl: "Alerty GPS przy ukrytych źródłach, punktach widokowych i miejscach, które turyści omijają.", is: "GPS-viðvaranir nálægt duldum laugum, útsýnisstöðum og staðbundnum stöðum." },
+  },
+  {
     id: "roads",
     tab: { en: "Road Status", pl: "Stan dróg", is: "Vegaástand" },
     title: { en: "Real-time road conditions", pl: "Warunki drogowe w czasie rzeczywistym", is: "Rauntíma vegaaðstæður" },
