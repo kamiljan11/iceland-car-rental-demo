@@ -6,6 +6,7 @@ import USPSection from "@/components/USPSection";
 import FleetSection from "@/components/FleetSection";
 import PickupProcess from "@/components/PickupProcess";
 import InsuranceCompare from "@/components/InsuranceCompare";
+import FreeExtras from "@/components/FreeExtras";
 import ItinerarySection from "@/components/RoutesSection";
 import DrivingTips from "@/components/DrivingTips";
 import TeamSection from "@/components/TeamSection";
@@ -30,6 +31,7 @@ const Index = () => {
       <PickupProcess />
       <NorthernLightsWave className="h-16 sm:h-24 -mb-1 rotate-180" />
       <InsuranceCompare />
+      <FreeExtras />
       <ItinerarySection />
       <DrivingTips />
       <TeamSection />
