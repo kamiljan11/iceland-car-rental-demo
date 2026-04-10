@@ -433,6 +433,44 @@ export const translations = {
       },
     ],
   },
+  usp: {
+    label: { en: "The NordCar Promise", pl: "Obietnica NordCar", is: "NordCar loforðið" },
+    title1: { en: "Three Zeros.", pl: "Trzy zera.", is: "Þrjú núll." },
+    title2: { en: "Total peace of mind.", pl: "Totalny spokój.", is: "Fullkominn hugarró." },
+    desc: {
+      en: "Most rental companies in Iceland charge €2,000+ deposits and surprise you at pickup. We do the opposite. Everything is included, nothing is hidden.",
+      pl: "Większość wypożyczalni na Islandii pobiera depozyty ponad 2000€ i zaskakuje Cię przy odbiorze. My robimy odwrotnie. Wszystko jest w cenie, nic nie jest ukryte.",
+      is: "Flestar bílaleigur á Íslandi rukka 2.000€+ tryggingu og koma á óvart við afhendingu. Við gerum öfugt. Allt er innifalið, ekkert er falið.",
+    },
+    zeros: [
+      {
+        title: { en: "Zero Deposit", pl: "Zero depozyt", is: "Engin trygging" },
+        desc: { en: "No credit card hold. No cash upfront. Most competitors lock €2,000+ on your card — we don't hold a single cent.", pl: "Bez blokady na karcie. Bez gotówki z góry. Konkurencja blokuje 2000€+ — my nie blokujemy ani centa.", is: "Engin kreditkortahald. Ekkert fyrirfram. Keppinautar halda 2.000€+ — við höldum ekki einni krónu." },
+      },
+      {
+        title: { en: "Zero Excess", pl: "Zero udział własny", is: "Engin sjálfsábyrgð" },
+        desc: { en: "Full insurance suite included in every booking. CDW, SCDW, gravel, sand & ash, water damage — all covered, zero out-of-pocket.", pl: "Pełne ubezpieczenie w każdej rezerwacji. CDW, SCDW, żwir, piasek, woda — wszystko pokryte, zero dopłat.", is: "Full trygging innifalin í hverri bókun. CDW, SCDW, möl, sandur og aska, vatn — allt tryggt, engin sjálfsábyrgð." },
+      },
+      {
+        title: { en: "Zero Hidden Fees", pl: "Zero ukrytych opłat", is: "Engin falinn kostnaður" },
+        desc: { en: "The price you see online is the price you pay. No airport surcharge, no fuel tricks, no surprise charges at the counter.", pl: "Cena, którą widzisz online to cena, którą płacisz. Bez dopłat lotniskowych, bez sztuczek z paliwem, bez niespodzianek.", is: "Verðið sem þú sérð á netinu er verðið sem þú borgar. Ekkert flugvallargjald, engin eldsneytisbragð, engin óvænt gjöld." },
+      },
+    ],
+    extras: [
+      {
+        title: { en: "24/7 Keybox Pickup", pl: "Keybox 24/7", is: "Lyklakista 24/7" },
+        desc: { en: "Land at any hour. Your car is waiting at KEF — no queues, no counters, no upsells.", pl: "Ląduj o dowolnej godzinie. Auto czeka na KEF — bez kolejek, bez lad, bez dopłat.", is: "Lentu hvenær sem er. Bíllinn bíður á KEF — engar biðraðir, engar afgreiðslur." },
+      },
+      {
+        title: { en: "Free Cancellation", pl: "Darmowe anulowanie", is: "Ókeypis afbókun" },
+        desc: { en: "Plans change. Cancel up to 48h before pickup — full refund, no questions asked.", pl: "Plany się zmieniają. Anuluj do 48h przed odbiorem — pełny zwrot, bez pytań.", is: "Áætlanir breytast. Afbókaðu allt að 48 klst. fyrir afhendingu — full endurgreiðsla." },
+      },
+      {
+        title: { en: "24/7 Roadside Rescue", pl: "Pomoc drogowa 24/7", is: "Vegabjörgun 24/7" },
+        desc: { en: "Stuck in the highlands at midnight? We'll be there. Phone support and vehicle rescue across all Iceland.", pl: "Utknąłeś na wyżynach o północy? Będziemy tam. Wsparcie telefoniczne i pomoc na całej Islandii.", is: "Fastur á hálendinu um miðnætti? Við komum. Símaþjónusta og bílbjörgun um allt Ísland." },
+      },
+    ],
+  },
   cta: {
     label: { en: "BUSINESS AUTOPILOT", pl: "BUSINESS AUTOPILOT", is: "BUSINESS AUTOPILOT" },
     title1: { en: "Want a Website Like This", pl: "Chcesz taką stronę", is: "Viltu svona vefsíðu" },
