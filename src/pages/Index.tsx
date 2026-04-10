@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import NorthernLightsWave from "@/components/svg/NorthernLightsWave";
 
 const Index = () => {
   return (
@@ -15,10 +16,13 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <TrustBadges />
+      <NorthernLightsWave className="h-16 sm:h-24 -mb-1" />
       <USPSection />
       <FleetSection />
+      <NorthernLightsWave className="h-16 sm:h-24 -mb-1 rotate-180" />
       <RoutesSection />
       <TestimonialsSection />
+      <NorthernLightsWave className="h-12 sm:h-16 -mb-1" />
       <FAQSection />
       <CTASection />
       <Footer />
