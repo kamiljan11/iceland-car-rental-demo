@@ -12,7 +12,7 @@ const FAQSection = () => {
   const { lang } = useLang();
 
   return (
-    <section className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
+    <section id="faq" className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
       <CrossHatch className="text-muted-foreground" />
       <div className="max-w-2xl mx-auto relative">
         <div className="text-center mb-12 sm:mb-16">

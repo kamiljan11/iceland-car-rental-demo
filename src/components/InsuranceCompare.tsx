@@ -26,7 +26,7 @@ const InsuranceCompare = () => {
   };
 
   return (
-    <section className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden">
+    <section id="insurance" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden">
       <AuroraGlow position="bottom-left" />
       <div className="max-w-3xl mx-auto relative">
         <div className="text-center mb-10 sm:mb-14">

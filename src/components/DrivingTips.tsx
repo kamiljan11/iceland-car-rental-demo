@@ -49,7 +49,7 @@ const DrivingTips = () => {
   };
 
   return (
-    <section className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden">
+    <section id="driving" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden">
       <CrossHatch className="text-primary" />
       <div className="max-w-5xl mx-auto relative">
         <div className="text-center mb-12 sm:mb-16">
