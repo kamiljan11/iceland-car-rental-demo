@@ -221,12 +221,17 @@ export const translations = {
       name: { en: "Land Cruiser 4×4", pl: "Land Cruiser 4×4", is: "Land Cruiser 4×4" },
       subtitle: { en: "Conquer highlands & F-roads", pl: "Podbij wyżyny i drogi F", is: "Sigra hálendi og F-vegi" },
       tag: { en: "Most popular", pl: "Najpopularniejszy", is: "Vinsælastur" },
+      description: {
+        en: "Our most popular choice for good reason. The Land Cruiser handles any terrain Iceland throws at it — gravel, snow, river crossings. Spacious interior with room for 4 large suitcases. Heated seats and powerful AC keep you comfortable year-round.",
+        pl: "Nasz najpopularniejszy wybór nie bez powodu. Land Cruiser poradzi sobie z każdym terenem w Islandii — żwir, śnieg, brody. Przestronne wnętrze na 4 duże walizki. Podgrzewane fotele i mocna klimatyzacja zapewniają komfort przez cały rok.",
+        is: "Vinsælasti valið okkar af góðri ástæðu. Land Cruiser ræður við allt landslag Íslands — möl, snjó, vaðlög. Rúmgott innrými með pláss fyrir 4 stóra ferðatöskur.",
+      },
       features: {
         en: ["5 seats", "Diesel", "4WD"],
         pl: ["5 miejsc", "Diesel", "4WD"],
         is: ["5 sæti", "Dísel", "4WD"],
       },
-      specs: { seats: 5, transmission: "automatic" as const, fuel: "diesel" as const, luggage: 4, drivetrain: "4WD" },
+      specs: { seats: 5, transmission: "automatic" as const, fuel: "diesel" as const, luggage: 4, drivetrain: "4WD", engine: "2.8L Turbo Diesel", range: "800 km" },
       price: { en: "from €89/day", pl: "od 89€/dzień", is: "frá 89€/dag" },
       bestFor: { en: "Highlands, F-roads, winter", pl: "Wyżyny, drogi F, zima", is: "Hálendi, F-vegir, vetur" },
       froad: true,

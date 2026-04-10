@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Check, Mountain, Fuel, Users, Cog, Shield, Luggage, Zap } from "lucide-react";
+import { ChevronLeft, ChevronRight, Check, Mountain, Fuel, Users, Cog, Shield, Luggage, Zap, Gauge, CarFront } from "lucide-react";
 import {
   Dialog,
   DialogContent,
