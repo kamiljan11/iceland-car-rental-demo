@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
-import DemoDialog from "@/components/DemoDialog";
+import BookingSimDialog from "@/components/BookingSimDialog";
 
 type VehicleKey = "suv" | "camper" | "compact" | "offroad" | "electric" | "luxury";
 
