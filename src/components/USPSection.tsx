@@ -2,6 +2,7 @@ import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
 import CompassRose from "@/components/svg/CompassRose";
 import Snowflake from "@/components/svg/Snowflake";
+import AuroraGlow from "@/components/svg/AuroraGlow";
 
 const USPSection = () => {
   const { lang } = useLang();
@@ -9,6 +10,7 @@ const USPSection = () => {
   return (
     <section className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
       {/* Decorative SVG accents */}
+      <AuroraGlow position="top-right" />
       <CompassRose className="absolute top-12 right-8 sm:right-16 text-primary" size={64} />
       <Snowflake className="absolute bottom-20 left-6 sm:left-12 text-primary" size={32} />
       <Snowflake className="absolute top-1/3 right-4 text-accent" size={18} />
