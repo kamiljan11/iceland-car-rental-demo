@@ -5,7 +5,6 @@ import USPSection from "@/components/USPSection";
 import FleetSection from "@/components/FleetSection";
 import PickupProcess from "@/components/PickupProcess";
 import InsuranceCompare from "@/components/InsuranceCompare";
-import FreeExtras from "@/components/FreeExtras";
 import ItinerarySection from "@/components/RoutesSection";
 import DrivingTips from "@/components/DrivingTips";
 import TeamSection from "@/components/TeamSection";
@@ -26,7 +25,6 @@ const Index = () => {
       <FleetSection />
       <PickupProcess />
       <InsuranceCompare />
-      <FreeExtras />
       <ItinerarySection />
       <DrivingTips />
       <TeamSection />

@@ -1,16 +1,25 @@
 import { Check, X } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import type { Lang } from "@/i18n/translations";
 
-const rows = [
+const rows: {
+  feature: Record<Lang, string>;
+  us: true;
+  them: "extra" | "seasonal" | boolean;
+  saved?: string;
+}[] = [
   { feature: { en: "CDW Insurance", pl: "Ubezpieczenie CDW", is: "CDW trygging" }, us: true, them: "extra" },
   { feature: { en: "SCDW (Super CDW)", pl: "SCDW (Super CDW)", is: "SCDW" }, us: true, them: "extra" },
   { feature: { en: "Gravel Protection", pl: "Ochrona przed żwirem", is: "Malarvörn" }, us: true, them: "extra" },
   { feature: { en: "Sand & Ash Protection", pl: "Ochrona przed piaskiem", is: "Sand- og öskuvörn" }, us: true, them: false },
   { feature: { en: "Zero Excess", pl: "Zerowy udział własny", is: "Engin sjálfsábyrgð" }, us: true, them: false },
   { feature: { en: "Zero Deposit Hold", pl: "Bez blokady depozytu", is: "Engin tryggingafjárhæð" }, us: true, them: false },
-  { feature: { en: "GPS Navigation", pl: "Nawigacja GPS", is: "GPS leiðsögn" }, us: true, them: "extra" },
-  { feature: { en: "Winter Tyres", pl: "Opony zimowe", is: "Vetrardekk" }, us: true, them: "seasonal" },
-  { feature: { en: "24/7 Roadside Assist", pl: "Pomoc drogowa 24/7", is: "24/7 vegahjálp" }, us: true, them: "extra" },
+  { feature: { en: "Portable Wi-Fi", pl: "Przenośne Wi-Fi", is: "Ferða-WiFi" }, us: true, them: "extra", saved: "€8/day" },
+  { feature: { en: "GPS Navigation", pl: "Nawigacja GPS", is: "GPS leiðsögn" }, us: true, them: "extra", saved: "€5/day" },
+  { feature: { en: "Winter Tyres & Studs", pl: "Opony zimowe i kolce", is: "Vetrardekk og broddar" }, us: true, them: "seasonal", saved: "€10/day" },
+  { feature: { en: "Child Seats", pl: "Foteliki dziecięce", is: "Barnastólar" }, us: true, them: "extra", saved: "€7/day" },
+  { feature: { en: "Full Insurance Bundle", pl: "Pełny pakiet ubezpieczeń", is: "Full tryggingapakki" }, us: true, them: "extra", saved: "€25/day" },
+  { feature: { en: "24/7 Roadside Assist", pl: "Pomoc drogowa 24/7", is: "24/7 vegahjálp" }, us: true, them: "extra", saved: "€6/day" },
 ];
 
 const InsuranceCompare = () => {
@@ -38,9 +47,11 @@ const InsuranceCompare = () => {
           {rows.map((row, i) => (
             <div
               key={i}
-              className={`grid grid-cols-[1fr_80px_80px] sm:grid-cols-[1fr_120px_120px] px-4 sm:px-6 py-3 text-sm items-center ${i % 2 === 0 ? "bg-card" : "bg-secondary/20"}`}
+              className={`grid grid-cols-[1fr_80px_80px] sm:grid-cols-[1fr_120px_120px] px-4 sm:px-6 py-2.5 sm:py-3 text-sm items-center ${i % 2 === 0 ? "bg-card" : "bg-secondary/20"}`}
             >
-              <span className="text-foreground text-xs sm:text-sm">{row.feature[lang]}</span>
+              <span className="text-foreground text-xs sm:text-sm">
+                {row.feature[lang]}
+              </span>
               <span className="flex justify-center">
                 <Check className="w-4 h-4 text-primary" />
               </span>
@@ -51,7 +62,7 @@ const InsuranceCompare = () => {
                   <X className="w-4 h-4 text-muted-foreground/40" />
                 ) : (
                   <span className="text-[10px] sm:text-xs text-muted-foreground">
-                    {row.them === "extra" ? labels.extra[lang] : labels.seasonal[lang]}
+                    {row.them === "extra" ? (row.saved || labels.extra[lang]) : labels.seasonal[lang]}
                   </span>
                 )}
               </span>
