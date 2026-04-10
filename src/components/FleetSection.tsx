@@ -95,12 +95,12 @@ const FleetSection = () => {
                   key={key}
                   className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500"
                 >
+                <div className="relative">
                   <ImageGallery imgs={images[key]} alt={v.name[lang]} />
-                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10">
-                    <span className="bg-primary/90 text-primary-foreground text-[10px] sm:text-xs font-medium px-2.5 py-1 rounded-full">
-                      {v.tag[lang]}
-                    </span>
-                  </div>
+                  <span className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 bg-primary/90 text-primary-foreground text-[10px] sm:text-xs font-medium px-2.5 py-1 rounded-full">
+                    {v.tag[lang]}
+                  </span>
+                </div>
                   <div className="p-5 sm:p-6">
                     <h3 className="font-display text-lg sm:text-xl font-semibold mb-1">
                       {v.name[lang]}
