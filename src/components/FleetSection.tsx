@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Users, Luggage, Cog, Fuel, Zap, Mountain } from "lucide-react";
 import DotGrid from "@/components/svg/DotGrid";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
@@ -29,6 +29,9 @@ const images: Record<string, string[]> = {
   electric: [carElectric, carElectric2],
   luxury: [carLuxury, carLuxury2],
 };
+
+const transmissionLabel = { automatic: "Auto", manual: "Manual" };
+const fuelIcon = (fuel: string) => fuel === "electric" ? Zap : Fuel;
 
 const ImageGallery = ({ imgs, alt }: { imgs: string[]; alt: string }) => {
   const [idx, setIdx] = useState(0);
@@ -71,6 +74,14 @@ const ImageGallery = ({ imgs, alt }: { imgs: string[]; alt: string }) => {
   );
 };
 
+/** Compact icon + label used on fleet cards, like real rental sites */
+const SpecChip = ({ icon: Icon, label }: { icon: React.ElementType; label: string }) => (
+  <div className="flex items-center gap-1.5 text-muted-foreground">
+    <Icon className="w-3.5 h-3.5" />
+    <span className="text-[11px] sm:text-xs">{label}</span>
+  </div>
+);
+
 const FleetSection = () => {
   const { lang } = useLang();
   const [selectedVehicle, setSelectedVehicle] = useState<VehicleKey | null>(null);
@@ -93,31 +104,44 @@ const FleetSection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {vehicleKeys.map((key) => {
               const v = t.vehicles[key];
+              const s = v.specs;
+              const FuelIcon = fuelIcon(s.fuel);
               return (
                 <div
                   key={key}
-                  className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500"
+                  className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500 cursor-pointer"
+                  onClick={() => setSelectedVehicle(key)}
                 >
-                <div className="relative">
-                  <ImageGallery imgs={images[key]} alt={v.name[lang]} />
-                  <span className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 bg-primary/90 text-primary-foreground text-[10px] sm:text-xs font-medium px-2.5 py-1 rounded-full">
-                    {v.tag[lang]}
-                  </span>
-                </div>
+                  <div className="relative">
+                    <ImageGallery imgs={images[key]} alt={v.name[lang]} />
+                    <span className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 bg-primary/90 text-primary-foreground text-[10px] sm:text-xs font-medium px-2.5 py-1 rounded-full">
+                      {v.tag[lang]}
+                    </span>
+                  </div>
                   <div className="p-5 sm:p-6">
                     <h3 className="font-display text-lg sm:text-xl font-semibold mb-1">
                       {v.name[lang]}
                     </h3>
-                    <p className="text-muted-foreground text-xs sm:text-sm mb-4">
+                    <p className="text-muted-foreground text-xs sm:text-sm mb-3">
                       {v.subtitle[lang]}
                     </p>
-                    <div className="flex items-center justify-between pt-4 border-t border-border/50">
+
+                    {/* Feature icons row — industry standard */}
+                    <div className="flex items-center gap-3 sm:gap-4 py-3 border-t border-b border-border/50 mb-4">
+                      <SpecChip icon={Users} label={String(s.seats)} />
+                      <SpecChip icon={Cog} label={transmissionLabel[s.transmission]} />
+                      <SpecChip icon={FuelIcon} label={s.fuel === "electric" ? "EV" : s.fuel.charAt(0).toUpperCase() + s.fuel.slice(1)} />
+                      {s.luggage > 0 && <SpecChip icon={Luggage} label={String(s.luggage)} />}
+                      {v.froad && <SpecChip icon={Mountain} label="F-Road" />}
+                    </div>
+
+                    <div className="flex items-center justify-between">
                       <span className="text-primary font-semibold text-base sm:text-lg">
                         {v.price[lang]}
                       </span>
                       <button
                         className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
-                        onClick={() => setSelectedVehicle(key)}
+                        onClick={(e) => { e.stopPropagation(); setSelectedVehicle(key); }}
                       >
                         {t.fleet.details[lang]}
                       </button>
