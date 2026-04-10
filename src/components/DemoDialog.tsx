@@ -60,7 +60,7 @@ const DemoDialog = ({ open, onOpenChange, feature = "generic" }: DemoDialogProps
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-md text-center">
+      <DialogContent className="max-w-md text-center z-[80]">
         <DialogHeader className="items-center">
           <div className="w-14 h-14 rounded-full bg-accent/20 flex items-center justify-center mb-2 mx-auto">
             <Sparkles className="w-7 h-7 text-accent" />
