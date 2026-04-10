@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Check, Mountain, Fuel, Users, Cog, Shield } from "lucide-react";
+import { ChevronLeft, ChevronRight, Check, Mountain, Fuel, Users, Cog, Shield, Luggage, Zap } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -20,6 +20,9 @@ interface VehicleDetailDialogProps {
   images: Record<string, string[]>;
 }
 
+const transmissionLabel = { automatic: "Automatic", manual: "Manual" };
+const fuelLabels: Record<string, string> = { diesel: "Diesel", petrol: "Petrol", electric: "Electric" };
+
 const VehicleDetailDialog = ({ open, onOpenChange, vehicleKey, images }: VehicleDetailDialogProps) => {
   const { lang } = useLang();
   const [imgIdx, setImgIdx] = useState(0);
@@ -30,11 +33,14 @@ const VehicleDetailDialog = ({ open, onOpenChange, vehicleKey, images }: Vehicle
   const v = t.vehicles[vehicleKey];
   const dm = t.fleet.detailModal;
   const imgs = images[vehicleKey] || [];
+  const s = v.specs;
+  const FuelIcon = s.fuel === "electric" ? Zap : Fuel;
 
   const specs = [
-    { icon: Users, label: dm.seats[lang], value: v.features[lang][0] },
-    { icon: Fuel, label: dm.fuel[lang], value: v.features[lang][1] },
-    { icon: Cog, label: dm.drive[lang], value: v.features[lang][2] },
+    { icon: Users, label: dm.seats[lang], value: String(s.seats) },
+    { icon: Cog, label: lang === "en" ? "Transmission" : lang === "pl" ? "Skrzynia" : "Gírskipti", value: transmissionLabel[s.transmission] },
+    { icon: FuelIcon, label: dm.fuel[lang], value: fuelLabels[s.fuel] },
+    { icon: Luggage, label: lang === "en" ? "Luggage" : lang === "pl" ? "Bagaż" : "Farangur", value: s.luggage > 0 ? `${s.luggage} bags` : "—" },
     { icon: Mountain, label: v.froad ? dm.froad[lang] : dm.noFroad[lang], value: v.froad ? "✓" : "—" },
   ];
 
@@ -99,21 +105,21 @@ const VehicleDetailDialog = ({ open, onOpenChange, vehicleKey, images }: Vehicle
             {/* Specs grid */}
             <div>
               <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-3">{dm.specs[lang]}</h4>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                 {specs.map(({ icon: Icon, label, value }) => (
-                  <div key={label} className="flex items-center gap-3 bg-secondary/40 rounded-xl px-4 py-3">
+                  <div key={label} className="flex items-center gap-3 bg-secondary/40 rounded-xl px-3.5 py-2.5">
                     <Icon className="w-4 h-4 text-primary shrink-0" />
-                    <div>
-                      <p className="text-xs text-muted-foreground">{label}</p>
-                      <p className="text-sm font-medium">{value}</p>
+                    <div className="min-w-0">
+                      <p className="text-[10px] text-muted-foreground truncate">{label}</p>
+                      <p className="text-xs font-medium">{value}</p>
                     </div>
                   </div>
                 ))}
-                <div className="flex items-center gap-3 bg-secondary/40 rounded-xl px-4 py-3 col-span-2 sm:col-span-1">
+                <div className="flex items-center gap-3 bg-secondary/40 rounded-xl px-3.5 py-2.5">
                   <Users className="w-4 h-4 text-primary shrink-0" />
                   <div>
-                    <p className="text-xs text-muted-foreground">{dm.minAge[lang]}</p>
-                    <p className="text-sm font-medium">{v.minAge}+</p>
+                    <p className="text-[10px] text-muted-foreground">{dm.minAge[lang]}</p>
+                    <p className="text-xs font-medium">{v.minAge}+</p>
                   </div>
                 </div>
               </div>
