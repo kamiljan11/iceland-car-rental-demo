@@ -173,19 +173,14 @@ const VehicleDetailDialog = ({ open, onOpenChange, vehicleKey, images }: Vehicle
             {/* CTA */}
             <Button
               className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base"
-              onClick={() => { onOpenChange(false); setTimeout(() => setBookingOpen(true), 300); }}
+              onClick={handleBookClick}
             >
               {dm.bookThis[lang]}
             </Button>
           </div>
         </DialogContent>
       </Dialog>
-      <BookingSimDialog
-        open={bookingOpen}
-        onOpenChange={setBookingOpen}
-        vehicleName={v.name[lang]}
-        vehiclePrice={v.price[lang]}
-      />
+      {bookingDialog}
     </>
   );
 };
