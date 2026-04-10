@@ -34,34 +34,53 @@ const InsuranceCompare = () => {
 
   return (
     <section id="insurance" className="py-14 sm:py-20 px-4 sm:px-6">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-2xl mx-auto">
         <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10">
           {labels.title[lang]}
         </h2>
-        <div className="rounded-xl border border-border overflow-hidden">
-          <div className="grid grid-cols-[1fr_80px_80px] sm:grid-cols-[1fr_120px_120px] bg-secondary/50 px-4 sm:px-6 py-3 text-xs sm:text-sm font-semibold">
-            <span />
-            <span className="text-center text-primary">{labels.us[lang]}</span>
-            <span className="text-center text-muted-foreground">{labels.them[lang]}</span>
+
+        {/* Table */}
+        <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
+          {/* Header */}
+          <div className="grid grid-cols-[1fr_72px_72px] sm:grid-cols-[1fr_100px_100px] items-center px-5 sm:px-6 py-3.5 border-b border-border bg-secondary/40">
+            <span className="text-xs text-muted-foreground uppercase tracking-wider font-medium">Feature</span>
+            <span className="text-center">
+              <span className="text-xs sm:text-sm font-bold text-primary">{labels.us[lang]}</span>
+            </span>
+            <span className="text-center">
+              <span className="text-xs sm:text-sm font-medium text-muted-foreground">{labels.them[lang]}</span>
+            </span>
           </div>
+
+          {/* Rows */}
           {rows.map((row, i) => (
             <div
               key={i}
-              className={`grid grid-cols-[1fr_80px_80px] sm:grid-cols-[1fr_120px_120px] px-4 sm:px-6 py-2.5 sm:py-3 text-sm items-center ${i % 2 === 0 ? "bg-card" : "bg-secondary/20"}`}
+              className={`grid grid-cols-[1fr_72px_72px] sm:grid-cols-[1fr_100px_100px] items-center px-5 sm:px-6 py-2.5 transition-colors hover:bg-secondary/20 ${
+                i !== rows.length - 1 ? "border-b border-border/50" : ""
+              }`}
             >
-              <span className="text-foreground text-xs sm:text-sm">
+              <span className="text-foreground text-xs sm:text-sm leading-tight">
                 {row.feature[lang]}
               </span>
+
+              {/* NordCar column */}
               <span className="flex justify-center">
-                <Check className="w-4 h-4 text-primary" />
+                <span className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center">
+                  <Check className="w-3 h-3 text-primary" strokeWidth={3} />
+                </span>
               </span>
+
+              {/* Others column */}
               <span className="flex justify-center">
                 {row.them === true ? (
-                  <Check className="w-4 h-4 text-muted-foreground" />
+                  <Check className="w-3.5 h-3.5 text-muted-foreground/50" />
                 ) : row.them === false ? (
-                  <X className="w-4 h-4 text-muted-foreground/40" />
+                  <span className="w-5 h-5 rounded-full bg-destructive/10 flex items-center justify-center">
+                    <X className="w-3 h-3 text-destructive/60" strokeWidth={3} />
+                  </span>
                 ) : (
-                  <span className="text-[10px] sm:text-xs text-muted-foreground">
+                  <span className="text-[10px] sm:text-xs text-muted-foreground/70 font-medium">
                     {row.them === "extra" ? (row.saved || labels.extra[lang]) : labels.seasonal[lang]}
                   </span>
                 )}
