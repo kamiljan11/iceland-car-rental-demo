@@ -7,7 +7,7 @@ import { translations as t } from "@/i18n/translations";
 import { useState } from "react";
 import DemoDialog from "@/components/DemoDialog";
 
-const flags: Record<Lang, string> = { en: "🇬🇧", pl: "🇵🇱", is: "🇮🇸" };
+const flags: Record<Lang, string> = { en: "EN", pl: "🇵🇱", is: "🇮🇸" };
 const langs: Lang[] = ["en", "pl", "is"];
 
 const Navbar = () => {
