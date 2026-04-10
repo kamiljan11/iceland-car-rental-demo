@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import DotGrid from "@/components/svg/DotGrid";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
-import DemoDialog from "@/components/DemoDialog";
+import VehicleDetailDialog from "@/components/VehicleDetailDialog";
 
 import carSuv from "@/assets/car-suv.jpg";
 import carSuv2 from "@/assets/car-suv-2.jpg";
@@ -19,6 +19,7 @@ import carLuxury from "@/assets/car-luxury.jpg";
 import carLuxury2 from "@/assets/car-luxury-2.jpg";
 
 const vehicleKeys = ["suv", "camper", "compact", "offroad", "electric", "luxury"] as const;
+type VehicleKey = typeof vehicleKeys[number];
 
 const images: Record<string, string[]> = {
   suv: [carSuv, carSuv2],
@@ -72,7 +73,7 @@ const ImageGallery = ({ imgs, alt }: { imgs: string[]; alt: string }) => {
 
 const FleetSection = () => {
   const { lang } = useLang();
-  const [demo, setDemo] = useState(false);
+  const [selectedVehicle, setSelectedVehicle] = useState<VehicleKey | null>(null);
 
   return (
     <>
@@ -116,7 +117,7 @@ const FleetSection = () => {
                       </span>
                       <button
                         className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
-                        onClick={() => setDemo(true)}
+                        onClick={() => setSelectedVehicle(key)}
                       >
                         {t.fleet.details[lang]}
                       </button>
@@ -128,7 +129,12 @@ const FleetSection = () => {
           </div>
         </div>
       </section>
-      <DemoDialog open={demo} onOpenChange={setDemo} feature="details" />
+      <VehicleDetailDialog
+        open={selectedVehicle !== null}
+        onOpenChange={(o) => { if (!o) setSelectedVehicle(null); }}
+        vehicleKey={selectedVehicle}
+        images={images}
+      />
     </>
   );
 };
