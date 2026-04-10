@@ -7,7 +7,7 @@ import PickupProcess from "@/components/PickupProcess";
 import InsuranceCompare from "@/components/InsuranceCompare";
 import AppShowcase from "@/components/AppShowcase";
 
-import DrivingTips from "@/components/DrivingTips";
+
 import TeamSection from "@/components/TeamSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
@@ -27,7 +27,7 @@ const Index = () => {
       <PickupProcess />
       <InsuranceCompare />
       <AppShowcase />
-      <DrivingTips />
+      
       <TeamSection />
       <TestimonialsSection />
       <FAQSection />
