@@ -35,19 +35,21 @@ const MiniPhone = ({ lang }: { lang: Lang }) => {
 
           {screen === 0 && (
             <div className="px-3 pt-1">
-              <div className="bg-secondary/50 rounded-lg h-16 mb-2 flex items-center justify-center relative overflow-hidden">
-                <svg viewBox="0 0 200 100" className="absolute inset-0 w-full h-full opacity-30">
-                  <path d="M20 80 C50 40, 80 60, 120 30 C150 10, 170 30, 190 20" stroke="hsl(var(--primary))" strokeWidth="2.5" fill="none" strokeDasharray="4 2" />
-                  <circle cx="20" cy="80" r="3" fill="hsl(var(--accent))" />
-                  <circle cx="190" cy="20" r="3" fill="hsl(var(--primary))" />
-                </svg>
-                <Navigation className="w-4 h-4 text-primary relative z-10" />
+              <div className="bg-primary/10 rounded-lg px-2 py-1.5 mb-2 text-center">
+                <span className="text-[7px] text-primary font-semibold">✨ AI Route Planner</span>
               </div>
-              <div className="space-y-1.5">
-                <div className="bg-secondary/30 rounded px-2 py-1.5 flex items-center gap-1.5">
-                  <MapPin className="w-2.5 h-2.5 text-primary" />
-                  <span className="text-[7px] text-foreground">Seljalandsfoss — 12 km</span>
-                </div>
+              <div className="space-y-1">
+                <div className="bg-secondary/30 rounded px-2 py-1 text-[7px] text-muted-foreground">🏔 Waterfalls · Hot springs</div>
+                <div className="bg-secondary/30 rounded px-2 py-1 text-[7px] text-muted-foreground">📅 5 days · South + East</div>
+              </div>
+              <div className="bg-secondary/50 rounded-lg h-12 mt-2 flex items-center justify-center relative overflow-hidden">
+                <svg viewBox="0 0 200 80" className="absolute inset-0 w-full h-full opacity-30">
+                  <path d="M20 60 C50 30, 80 50, 120 20 C150 5, 170 25, 190 15" stroke="hsl(var(--primary))" strokeWidth="2.5" fill="none" strokeDasharray="4 2" />
+                  <circle cx="20" cy="60" r="3" fill="hsl(var(--accent))" />
+                  <circle cx="120" cy="20" r="2.5" fill="hsl(var(--primary))" />
+                  <circle cx="190" cy="15" r="3" fill="hsl(var(--primary))" />
+                </svg>
+                <Route className="w-3.5 h-3.5 text-primary relative z-10" />
               </div>
             </div>
           )}
