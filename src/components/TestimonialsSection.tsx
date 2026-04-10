@@ -1,4 +1,4 @@
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
 
@@ -6,9 +6,9 @@ const TestimonialsSection = () => {
   const { lang } = useLang();
 
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6">
+    <section className="py-20 sm:py-32 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 sm:mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <p className="text-primary font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-2 sm:mb-3">
             {t.testimonials.label[lang]}
           </p>
@@ -17,33 +17,25 @@ const TestimonialsSection = () => {
           </h2>
         </div>
 
-        {/* Horizontal scroll on mobile */}
-        <div className="flex overflow-x-auto gap-4 sm:gap-6 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 md:grid md:grid-cols-3 md:overflow-visible scrollbar-hide">
+        <div className="flex overflow-x-auto gap-5 sm:gap-6 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 md:grid md:grid-cols-3 md:overflow-visible scrollbar-hide">
           {t.testimonials.items.map((item, i) => (
             <div
               key={i}
-              className="bg-card border border-border rounded-2xl p-6 sm:p-8 flex flex-col hover:border-primary/30 transition-colors duration-300 shrink-0 w-[280px] sm:w-auto"
+              className="bg-card/50 border border-border/50 rounded-2xl p-6 sm:p-8 flex flex-col shrink-0 w-[280px] sm:w-auto"
             >
-              <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-primary/30 mb-3 sm:mb-4" />
-              <p className="text-secondary-foreground text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 flex-1">
+              <p className="text-secondary-foreground text-sm leading-relaxed mb-6 flex-1 italic">
                 "{item.text[lang]}"
               </p>
-              <div className="flex gap-0.5 mb-3 sm:mb-4">
+              <div className="flex gap-0.5 mb-3">
                 {Array.from({ length: item.rating }).map((_, j) => (
-                  <Star key={j} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-accent text-accent" />
+                  <Star key={j} className="w-3.5 h-3.5 fill-accent text-accent" />
                 ))}
               </div>
-              <div className="border-t border-border pt-3 sm:pt-4">
-                <p className="font-semibold text-xs sm:text-sm">{item.name}</p>
-                <p className="text-muted-foreground text-[10px] sm:text-xs">{item.country[lang]}</p>
-                <p className="text-primary text-[10px] sm:text-xs mt-1">{item.route[lang]}</p>
-              </div>
+              <p className="font-semibold text-sm">{item.name}</p>
+              <p className="text-muted-foreground text-xs">{item.route[lang]}</p>
             </div>
           ))}
         </div>
-        <p className="text-center text-[10px] text-muted-foreground mt-2 md:hidden">
-          ← swipe to see more →
-        </p>
       </div>
     </section>
   );
