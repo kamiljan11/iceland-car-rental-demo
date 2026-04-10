@@ -60,11 +60,12 @@ const BookingSimDialog = ({ open, onOpenChange, vehicleName, vehiclePrice }: Boo
     securePayment: { en: "Secure payment · Free cancellation up to 48h", pl: "Bezpieczna płatność · Darmowe anulowanie do 48h", is: "Örugg greiðsla · Ókeypis afbókun í allt að 48 klst" },
   };
 
+  const freeLabel = { en: "Free", pl: "Gratis", is: "Ókeypis" };
   const extrasOptions = [
-    { key: "gps" as const, label: { en: "GPS Navigation", pl: "Nawigacja GPS", is: "GPS leiðsögn" }, price: "€5/day" },
-    { key: "childSeat" as const, label: { en: "Child Seat", pl: "Fotelik dziecięcy", is: "Barnastóll" }, price: "€8/day" },
-    { key: "gravel" as const, label: { en: "Gravel Protection", pl: "Ochrona przed żwirem", is: "Malarvörn" }, price: "€12/day" },
-    { key: "wifi" as const, label: { en: "Mobile WiFi", pl: "Mobilne WiFi", is: "Farsíma WiFi" }, price: "€10/day" },
+    { key: "gps" as const, label: { en: "GPS Navigation", pl: "Nawigacja GPS", is: "GPS leiðsögn" }, price: freeLabel[lang] },
+    { key: "childSeat" as const, label: { en: "Child Seat", pl: "Fotelik dziecięcy", is: "Barnastóll" }, price: freeLabel[lang] },
+    { key: "gravel" as const, label: { en: "Gravel Protection", pl: "Ochrona przed żwirem", is: "Malarvörn" }, price: freeLabel[lang] },
+    { key: "wifi" as const, label: { en: "Mobile WiFi", pl: "Mobilne WiFi", is: "Farsíma WiFi" }, price: freeLabel[lang] },
   ];
 
   const days = pickupDate && dropoffDate
@@ -72,13 +73,7 @@ const BookingSimDialog = ({ open, onOpenChange, vehicleName, vehiclePrice }: Boo
     : 0;
 
   const priceNum = parseInt(vehiclePrice.replace(/[^0-9]/g, "")) || 89;
-  const extrasTotal = Object.entries(extras).reduce((sum, [key, checked]) => {
-    if (!checked) return sum;
-    const opt = extrasOptions.find(o => o.key === key);
-    const p = parseInt(opt?.price.replace(/[^0-9]/g, "") || "0");
-    return sum + p * days;
-  }, 0);
-  const total = days * priceNum + extrasTotal;
+  const total = days * priceNum;
 
   const isFormValid = name.trim().length > 0 && email.includes("@") && phone.trim().length > 0 && days > 0;
 
@@ -249,12 +244,6 @@ const BookingSimDialog = ({ open, onOpenChange, vehicleName, vehiclePrice }: Boo
                       <span className="text-muted-foreground">{vehiclePrice} × {days} {lang === "pl" ? "dni" : lang === "is" ? "dagar" : "days"}</span>
                       <span className="font-medium">€{days * priceNum}</span>
                     </div>
-                    {extrasTotal > 0 && (
-                      <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">{labels.optionalExtras[lang]}</span>
-                        <span className="font-medium">€{extrasTotal}</span>
-                      </div>
-                    )}
                     <div className="flex justify-between text-sm border-t border-border/50 pt-2">
                       <span className="font-semibold">{labels.total[lang]}</span>
                       <span className="font-bold text-primary text-lg">€{total}</span>
