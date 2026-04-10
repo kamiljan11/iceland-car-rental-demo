@@ -27,9 +27,7 @@ const InsuranceCompare = () => {
   const labels = {
     title: { en: "What's included vs. others", pl: "Co jest w cenie vs. konkurencja", is: "Hvað er innifalið vs. aðrir" },
     us: { en: "NordCar", pl: "NordCar", is: "NordCar" },
-    them: { en: "Others", pl: "Konkurencja", is: "Aðrir" },
-    extra: { en: "Extra €€", pl: "Dodatkowe €€", is: "Auka €€" },
-    seasonal: { en: "Seasonal", pl: "Sezonowo", is: "Árstíðabundið" },
+    them: { en: "Avg. price", pl: "Śr. cena", is: "Meðalverð" },
   };
 
   return (
