@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { MapPin, Navigation, Cloud, Sparkles, Zap, Mountain, Phone, Camera } from "lucide-react";
+import { MapPin, Navigation, Cloud, Sparkles, Zap, Mountain, Phone, Camera, Route } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import type { Lang } from "@/i18n/translations";
 
 const features = [
+  { icon: Route, label: { en: "AI Route Planner", pl: "Planer tras AI", is: "AI leiðarskipulag" }, highlight: true },
   { icon: Navigation, label: { en: "Offline Maps", pl: "Mapy offline", is: "Ónettengd kort" } },
   { icon: Sparkles, label: { en: "Aurora Alerts", pl: "Alerty zorzy", is: "Norðurljósaviðvaranir" } },
   { icon: Mountain, label: { en: "Hiking Trails", pl: "Szlaki", is: "Gönguleiðir" } },
@@ -34,19 +35,21 @@ const MiniPhone = ({ lang }: { lang: Lang }) => {
 
           {screen === 0 && (
             <div className="px-3 pt-1">
-              <div className="bg-secondary/50 rounded-lg h-16 mb-2 flex items-center justify-center relative overflow-hidden">
-                <svg viewBox="0 0 200 100" className="absolute inset-0 w-full h-full opacity-30">
-                  <path d="M20 80 C50 40, 80 60, 120 30 C150 10, 170 30, 190 20" stroke="hsl(var(--primary))" strokeWidth="2.5" fill="none" strokeDasharray="4 2" />
-                  <circle cx="20" cy="80" r="3" fill="hsl(var(--accent))" />
-                  <circle cx="190" cy="20" r="3" fill="hsl(var(--primary))" />
-                </svg>
-                <Navigation className="w-4 h-4 text-primary relative z-10" />
+              <div className="bg-primary/10 rounded-lg px-2 py-1.5 mb-2 text-center">
+                <span className="text-[7px] text-primary font-semibold">✨ AI Route Planner</span>
               </div>
-              <div className="space-y-1.5">
-                <div className="bg-secondary/30 rounded px-2 py-1.5 flex items-center gap-1.5">
-                  <MapPin className="w-2.5 h-2.5 text-primary" />
-                  <span className="text-[7px] text-foreground">Seljalandsfoss — 12 km</span>
-                </div>
+              <div className="space-y-1">
+                <div className="bg-secondary/30 rounded px-2 py-1 text-[7px] text-muted-foreground">🏔 Waterfalls · Hot springs</div>
+                <div className="bg-secondary/30 rounded px-2 py-1 text-[7px] text-muted-foreground">📅 5 days · South + East</div>
+              </div>
+              <div className="bg-secondary/50 rounded-lg h-12 mt-2 flex items-center justify-center relative overflow-hidden">
+                <svg viewBox="0 0 200 80" className="absolute inset-0 w-full h-full opacity-30">
+                  <path d="M20 60 C50 30, 80 50, 120 20 C150 5, 170 25, 190 15" stroke="hsl(var(--primary))" strokeWidth="2.5" fill="none" strokeDasharray="4 2" />
+                  <circle cx="20" cy="60" r="3" fill="hsl(var(--accent))" />
+                  <circle cx="120" cy="20" r="2.5" fill="hsl(var(--primary))" />
+                  <circle cx="190" cy="15" r="3" fill="hsl(var(--primary))" />
+                </svg>
+                <Route className="w-3.5 h-3.5 text-primary relative z-10" />
               </div>
             </div>
           )}
@@ -94,7 +97,7 @@ const AppShowcase = () => {
   const labels = {
     badge: { en: "Free with every booking", pl: "Gratis do każdej rezerwacji", is: "Ókeypis með hverri bókun" },
     title: { en: "NordCar Travel App", pl: "Aplikacja NordCar Travel", is: "NordCar Travel App" },
-    desc: { en: "Everything you need for Iceland in one app — no extra cost.", pl: "Wszystko, czego potrzebujesz w Islandii — bez dodatkowych kosztów.", is: "Allt sem þú þarft á Íslandi í einu appi — án aukakostnaðar." },
+    desc: { en: "Tell the app your interests — it builds a perfect route with hidden gems, weather, and road conditions. Plus 9 more tools.", pl: "Podaj swoje zainteresowania — aplikacja stworzy idealną trasę z ukrytymi perełkami, pogodą i stanem dróg. Plus 9 innych narzędzi.", is: "Segðu appinu frá áhugamálum — það býr til fullkomna leið með faldum gimsteinum, veðri og vegaaðstæðum. Auk 9 annarra verkfæra." },
   };
 
   return (
@@ -117,11 +120,15 @@ const AppShowcase = () => {
             </p>
 
             {/* Feature grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {features.map((f) => (
-                <div key={f.label.en} className="flex items-center gap-1.5 bg-secondary/40 rounded-lg px-2.5 py-2">
-                  <f.icon className="w-3.5 h-3.5 text-primary shrink-0" />
-                  <span className="text-[10px] sm:text-xs text-foreground font-medium">{f.label[lang]}</span>
+                <div key={f.label.en} className={`flex items-center gap-1.5 rounded-lg px-2.5 py-2 ${
+                  'highlight' in f && f.highlight 
+                    ? "bg-primary/15 border border-primary/25 col-span-2 sm:col-span-3" 
+                    : "bg-secondary/40"
+                }`}>
+                  <f.icon className={`w-3.5 h-3.5 shrink-0 ${'highlight' in f && f.highlight ? "text-primary" : "text-primary"}`} />
+                  <span className={`text-[10px] sm:text-xs font-medium ${'highlight' in f && f.highlight ? "text-primary" : "text-foreground"}`}>{f.label[lang]}</span>
                 </div>
               ))}
             </div>
