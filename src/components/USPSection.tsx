@@ -1,12 +1,19 @@
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
+import CompassRose from "@/components/svg/CompassRose";
+import Snowflake from "@/components/svg/Snowflake";
 
 const USPSection = () => {
   const { lang } = useLang();
 
   return (
-    <section className="py-20 sm:py-32 px-4 sm:px-6">
-      <div className="max-w-4xl mx-auto">
+    <section className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
+      {/* Decorative SVG accents */}
+      <CompassRose className="absolute top-12 right-8 sm:right-16 text-primary" size={64} />
+      <Snowflake className="absolute bottom-20 left-6 sm:left-12 text-primary" size={32} />
+      <Snowflake className="absolute top-1/3 right-4 text-accent" size={18} />
+
+      <div className="max-w-4xl mx-auto relative">
         <div className="text-center mb-16 sm:mb-24">
           <p className="text-accent font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-4 sm:mb-5">
             {t.usp.label[lang]}

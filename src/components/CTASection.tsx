@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
 import { useState } from "react";
 import DemoDialog from "@/components/DemoDialog";
+import IcelandOutline from "@/components/svg/IcelandOutline";
+import CompassRose from "@/components/svg/CompassRose";
 
 const CTASection = () => {
   const { lang } = useLang();
@@ -11,8 +13,12 @@ const CTASection = () => {
 
   return (
     <>
-      <section className="py-20 sm:py-32 px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
+        {/* Decorative background SVGs */}
+        <IcelandOutline className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary" size={400} />
+        <CompassRose className="absolute bottom-8 right-8 sm:right-16 text-muted-foreground" size={40} />
+
+        <div className="max-w-3xl mx-auto text-center relative">
           <p className="text-accent font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-6 sm:mb-8">
             {t.cta.label[lang]}
           </p>
@@ -39,13 +45,6 @@ const CTASection = () => {
             </Button>
             <span className="text-muted-foreground text-sm">
               {t.cta.price[lang]}
-            </span>
-          </div>
-
-          <div className="flex items-center justify-center gap-2 text-muted-foreground text-xs">
-            <Zap className="w-3.5 h-3.5 text-accent" />
-            <span>
-              {t.cta.badges.b1[lang]} · {t.cta.badges.b2[lang]} · {t.cta.badges.b3[lang]}
             </span>
           </div>
         </div>

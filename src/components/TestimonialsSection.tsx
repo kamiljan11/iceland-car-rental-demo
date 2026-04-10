@@ -1,13 +1,19 @@
 import { Star } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
+import Snowflake from "@/components/svg/Snowflake";
 
 const TestimonialsSection = () => {
   const { lang } = useLang();
 
   return (
-    <section className="py-20 sm:py-32 px-4 sm:px-6">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
+      {/* Scattered snowflakes */}
+      <Snowflake className="absolute top-16 left-[10%] text-primary" size={20} />
+      <Snowflake className="absolute top-1/3 right-[8%] text-accent" size={16} />
+      <Snowflake className="absolute bottom-24 left-[20%] text-primary" size={14} />
+
+      <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-primary font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-2 sm:mb-3">
             {t.testimonials.label[lang]}
