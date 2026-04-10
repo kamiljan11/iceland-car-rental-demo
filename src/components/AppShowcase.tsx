@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MapPin, Navigation, Cloud, AlertTriangle, Fuel, Phone, ChevronRight } from "lucide-react";
+import { MapPin, Navigation, Cloud, AlertTriangle, Fuel, Phone, ChevronRight, Sparkles, Eye } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import type { Lang } from "@/i18n/translations";
 
@@ -15,6 +15,12 @@ const screens = [
     tab: { en: "Weather", pl: "Pogoda", is: "Veður" },
     title: { en: "Road-aware weather", pl: "Pogoda na trasie", is: "Veður á leiðinni" },
     desc: { en: "Hourly forecasts along your route. Wind, ice, and visibility alerts before you drive.", pl: "Prognoza godzinowa na trasie. Alerty wiatru, lodu i widoczności.", is: "Klukkutímaspá á leiðinni. Vindur, ís og skyggni viðvaranir." },
+  },
+  {
+    id: "secrets",
+    tab: { en: "Secrets", pl: "Sekrety", is: "Leyndarmál" },
+    title: { en: "Secret location alerts", pl: "Alerty o ukrytych miejscach", is: "Viðvaranir um leynda staði" },
+    desc: { en: "GPS-triggered alerts near hidden hot springs, viewpoints, and local spots tourists miss.", pl: "Alerty GPS przy ukrytych źródłach, punktach widokowych i miejscach, które turyści omijają.", is: "GPS-viðvaranir nálægt duldum laugum, útsýnisstöðum og staðbundnum stöðum." },
   },
   {
     id: "roads",
@@ -106,6 +112,45 @@ const PhoneMockup = ({ activeScreen, lang }: { activeScreen: number; lang: Lang 
 
           {activeScreen === 2 && (
             <div className="px-4 pt-2">
+              <div className="flex items-center gap-2 mb-3">
+                <Sparkles className="w-4 h-4 text-accent" />
+                <span className="text-[11px] font-semibold text-foreground">
+                  {lang === "en" ? "Nearby secrets" : lang === "pl" ? "Sekrety w pobliżu" : "Leyndarmál í nágrenninu"}
+                </span>
+              </div>
+              <div className="space-y-2">
+                {[
+                  { name: "Seljavallalaug Pool", dist: "0.8 km", type: "hot-spring" },
+                  { name: "Hidden Canyon Trail", dist: "2.1 km", type: "viewpoint" },
+                  { name: "Local Fish Soup", dist: "4.5 km", type: "food" },
+                ].map((spot) => (
+                  <div key={spot.name} className="bg-secondary/30 rounded-lg px-3 py-2.5">
+                    <div className="flex items-center justify-between mb-0.5">
+                      <span className="text-[10px] font-medium text-foreground">{spot.name}</span>
+                      <span className="text-[8px] text-primary font-semibold">{spot.dist}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Eye className="w-2.5 h-2.5 text-muted-foreground" />
+                      <span className="text-[8px] text-muted-foreground">
+                        {spot.type === "hot-spring" ? "🔥 Hidden hot spring" : spot.type === "viewpoint" ? "👁 Secret viewpoint" : "🍜 Local favorite"}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-3 bg-accent/10 border border-accent/20 rounded-lg px-3 py-2">
+                <div className="flex items-center gap-1.5">
+                  <MapPin className="w-3 h-3 text-accent" />
+                  <span className="text-[9px] text-accent font-medium">
+                    {lang === "en" ? "Alert: Secret waterfall 300m off road!" : lang === "pl" ? "Alert: Ukryty wodospad 300m od drogi!" : "Viðvörun: Leyndur foss 300m frá vegi!"}
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeScreen === 3 && (
+            <div className="px-4 pt-2">
               <div className="space-y-2">
                 {[
                   { road: "Route 1 (South)", status: "Open", color: "text-emerald-400" },
@@ -124,7 +169,7 @@ const PhoneMockup = ({ activeScreen, lang }: { activeScreen: number; lang: Lang 
             </div>
           )}
 
-          {activeScreen === 3 && (
+          {activeScreen === 4 && (
             <div className="px-4 pt-4 flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-destructive/20 flex items-center justify-center mb-3">
                 <Phone className="w-7 h-7 text-destructive" />
