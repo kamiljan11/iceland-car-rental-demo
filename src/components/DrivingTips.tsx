@@ -1,6 +1,5 @@
 import { Sun, Snowflake, AlertTriangle, Eye } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
-import CrossHatch from "@/components/svg/CrossHatch";
 
 const tips = [
   {
@@ -44,32 +43,23 @@ const tips = [
 const DrivingTips = () => {
   const { lang } = useLang();
   const labels = {
-    label: { en: "Know before you go", pl: "Wiedz zanim pojedziesz", is: "Vittu áður en þú ferð" },
     title: { en: "Driving in Iceland", pl: "Jazda po Islandii", is: "Akstur á Íslandi" },
   };
 
   return (
-    <section id="driving" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden">
-      <CrossHatch className="text-primary" />
-      <div className="max-w-5xl mx-auto relative">
-        <div className="text-center mb-12 sm:mb-16">
-          <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs sm:text-sm mb-2">
-            {labels.label[lang]}
-          </p>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
-            {labels.title[lang]}
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <section id="driving" className="py-14 sm:py-20 px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10">
+          {labels.title[lang]}
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {tips.map((tip, i) => (
-            <div key={i} className="bg-card border border-border rounded-2xl p-5 sm:p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <tip.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-display text-base sm:text-lg font-semibold">{tip.season[lang]}</h3>
+            <div key={i} className="rounded-xl border border-border bg-card p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <tip.icon className="w-4 h-4 text-primary" />
+                <h3 className="font-semibold text-sm sm:text-base">{tip.season[lang]}</h3>
               </div>
-              <ul className="space-y-2">
+              <ul className="space-y-1.5">
                 {tip.items[lang].map((item, j) => (
                   <li key={j} className="text-muted-foreground text-xs sm:text-sm flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>

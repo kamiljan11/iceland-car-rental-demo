@@ -19,8 +19,8 @@ const team = [
     name: "Ragnar Sigurðsson",
     role: { en: "Fleet Manager", pl: "Kierownik floty", is: "Bílastjóri" },
     bio: {
-      en: "Former mechanic. Every car leaves our lot in perfect condition — he makes sure of it.",
-      pl: "Były mechanik. Każde auto opuszcza nasz parking w idealnym stanie — on tego pilnuje.",
+      en: "Former mechanic. Every car leaves our lot in perfect condition.",
+      pl: "Były mechanik. Każde auto opuszcza nasz parking w idealnym stanie.",
       is: "Fyrrverandi bifvélavirki. Hver bíll fer frá okkur í fullkomnu ástandi.",
     },
   },
@@ -39,34 +39,28 @@ const team = [
 const TeamSection = () => {
   const { lang } = useLang();
   const labels = {
-    label: { en: "The people behind the wheel", pl: "Ludzie za kierownicą", is: "Fólkið á bak við stýrið" },
     title: { en: "Meet our team", pl: "Poznaj nasz zespół", is: "Kynntu þér teymið" },
   };
 
   return (
-    <section className="py-20 sm:py-28 px-4 sm:px-6">
+    <section className="py-14 sm:py-20 px-4 sm:px-6 bg-secondary/30">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12 sm:mb-16">
-          <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs sm:text-sm mb-2">
-            {labels.label[lang]}
-          </p>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
-            {labels.title[lang]}
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10">
+          {labels.title[lang]}
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
           {team.map((m) => (
-            <div key={m.name} className="text-center">
+            <div key={m.name} className="flex flex-col items-center text-center">
               <img
                 src={m.img}
                 alt={m.name}
                 loading="lazy"
                 width={400}
                 height={400}
-                className="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mx-auto mb-4 border-2 border-border"
+                className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover mb-3 border-2 border-border"
               />
-              <h3 className="font-display text-lg font-semibold">{m.name}</h3>
-              <p className="text-primary text-xs sm:text-sm font-medium mb-2">{m.role[lang]}</p>
+              <h3 className="font-semibold text-base">{m.name}</h3>
+              <p className="text-primary text-xs font-medium mb-1">{m.role[lang]}</p>
               <p className="text-muted-foreground text-sm leading-relaxed">{m.bio[lang]}</p>
             </div>
           ))}

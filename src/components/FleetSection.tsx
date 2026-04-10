@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Users, Luggage, Cog, Fuel, Zap, Mountain } from "lucide-react";
-import DotGrid from "@/components/svg/DotGrid";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations as t } from "@/i18n/translations";
 import VehicleDetailDialog from "@/components/VehicleDetailDialog";
@@ -37,7 +36,7 @@ const ImageGallery = ({ imgs, alt }: { imgs: string[]; alt: string }) => {
   const [idx, setIdx] = useState(0);
 
   return (
-    <div className="relative overflow-hidden h-44 sm:h-56 group/gallery">
+    <div className="relative overflow-hidden h-44 sm:h-52 group/gallery bg-secondary/30">
       <img
         src={imgs[idx]}
         alt={alt}
@@ -74,7 +73,6 @@ const ImageGallery = ({ imgs, alt }: { imgs: string[]; alt: string }) => {
   );
 };
 
-/** Compact icon + label used on fleet cards, like real rental sites */
 const SpecChip = ({ icon: Icon, label }: { icon: React.ElementType; label: string }) => (
   <div className="flex items-center gap-1.5 text-muted-foreground">
     <Icon className="w-3.5 h-3.5" />
@@ -88,20 +86,21 @@ const FleetSection = () => {
 
   return (
     <>
-      <section id="fleet" className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
-        <DotGrid className="text-primary" />
-        <div className="max-w-7xl mx-auto relative">
-          <p className="text-primary font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-2 sm:mb-3">
-            {t.fleet.label[lang]}
-          </p>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
-            {t.fleet.title[lang]}
-          </h2>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-xl mb-12 sm:mb-16">
-            {t.fleet.desc[lang]}
-          </p>
+      <section id="fleet" className="py-14 sm:py-20 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-8 sm:mb-10 gap-2">
+            <div>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold">
+                {t.fleet.title[lang]}
+              </h2>
+              <p className="text-muted-foreground text-sm sm:text-base mt-1">
+                {t.fleet.desc[lang]}
+              </p>
+            </div>
+            <p className="text-xs text-muted-foreground whitespace-nowrap">{t.fleet.label[lang]}</p>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {vehicleKeys.map((key) => {
               const v = t.vehicles[key];
               const s = v.specs;
@@ -109,42 +108,36 @@ const FleetSection = () => {
               return (
                 <div
                   key={key}
-                  className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500 cursor-pointer"
+                  className="group bg-card rounded-xl overflow-hidden border border-border hover:border-primary/40 transition-all duration-300 cursor-pointer"
                   onClick={() => setSelectedVehicle(key)}
                 >
                   <div className="relative">
                     <ImageGallery imgs={images[key]} alt={v.name[lang]} />
-                    <span className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 bg-primary/90 text-primary-foreground text-[10px] sm:text-xs font-medium px-2.5 py-1 rounded-full">
+                    <span className="absolute top-3 left-3 z-10 bg-accent text-accent-foreground text-[10px] sm:text-xs font-semibold px-2.5 py-1 rounded">
                       {v.tag[lang]}
                     </span>
                   </div>
-                  <div className="p-5 sm:p-6">
-                    <h3 className="font-display text-lg sm:text-xl font-semibold mb-1">
-                      {v.name[lang]}
-                    </h3>
-                    <p className="text-muted-foreground text-xs sm:text-sm mb-3">
-                      {v.subtitle[lang]}
-                    </p>
+                  <div className="p-4 sm:p-5">
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <h3 className="font-display text-base sm:text-lg font-semibold leading-tight">
+                          {v.name[lang]}
+                        </h3>
+                        <p className="text-muted-foreground text-xs mt-0.5">
+                          {v.subtitle[lang]}
+                        </p>
+                      </div>
+                      <span className="text-primary font-bold text-sm sm:text-base whitespace-nowrap">
+                        {v.price[lang]}
+                      </span>
+                    </div>
 
-                    {/* Feature icons row — industry standard */}
-                    <div className="flex items-center gap-3 sm:gap-4 py-3 border-t border-b border-border/50 mb-4">
+                    <div className="flex items-center gap-3 pt-3 border-t border-border/50">
                       <SpecChip icon={Users} label={String(s.seats)} />
                       <SpecChip icon={Cog} label={transmissionLabel[s.transmission]} />
                       <SpecChip icon={FuelIcon} label={s.fuel === "electric" ? "EV" : s.fuel.charAt(0).toUpperCase() + s.fuel.slice(1)} />
                       {s.luggage > 0 && <SpecChip icon={Luggage} label={String(s.luggage)} />}
                       {v.froad && <SpecChip icon={Mountain} label="F-Road" />}
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-primary font-semibold text-base sm:text-lg">
-                        {v.price[lang]}
-                      </span>
-                      <button
-                        className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
-                        onClick={(e) => { e.stopPropagation(); setSelectedVehicle(key); }}
-                      >
-                        {t.fleet.details[lang]}
-                      </button>
                     </div>
                   </div>
                 </div>
