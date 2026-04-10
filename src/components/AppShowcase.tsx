@@ -95,7 +95,7 @@ const AppShowcase = () => {
   const labels = {
     badge: { en: "Free with every booking", pl: "Gratis do każdej rezerwacji", is: "Ókeypis með hverri bókun" },
     title: { en: "NordCar Travel App", pl: "Aplikacja NordCar Travel", is: "NordCar Travel App" },
-    desc: { en: "Everything you need for Iceland in one app — no extra cost.", pl: "Wszystko, czego potrzebujesz w Islandii — bez dodatkowych kosztów.", is: "Allt sem þú þarft á Íslandi í einu appi — án aukakostnaðar." },
+    desc: { en: "Tell the app your interests — it builds a perfect route with hidden gems, weather, and road conditions. Plus 9 more tools.", pl: "Podaj swoje zainteresowania — aplikacja stworzy idealną trasę z ukrytymi perełkami, pogodą i stanem dróg. Plus 9 innych narzędzi.", is: "Segðu appinu frá áhugamálum — það býr til fullkomna leið með faldum gimsteinum, veðri og vegaaðstæðum. Auk 9 annarra verkfæra." },
   };
 
   return (
@@ -118,11 +118,15 @@ const AppShowcase = () => {
             </p>
 
             {/* Feature grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {features.map((f) => (
-                <div key={f.label.en} className="flex items-center gap-1.5 bg-secondary/40 rounded-lg px-2.5 py-2">
-                  <f.icon className="w-3.5 h-3.5 text-primary shrink-0" />
-                  <span className="text-[10px] sm:text-xs text-foreground font-medium">{f.label[lang]}</span>
+                <div key={f.label.en} className={`flex items-center gap-1.5 rounded-lg px-2.5 py-2 ${
+                  'highlight' in f && f.highlight 
+                    ? "bg-primary/15 border border-primary/25 col-span-2 sm:col-span-3" 
+                    : "bg-secondary/40"
+                }`}>
+                  <f.icon className={`w-3.5 h-3.5 shrink-0 ${'highlight' in f && f.highlight ? "text-primary" : "text-primary"}`} />
+                  <span className={`text-[10px] sm:text-xs font-medium ${'highlight' in f && f.highlight ? "text-primary" : "text-foreground"}`}>{f.label[lang]}</span>
                 </div>
               ))}
             </div>
