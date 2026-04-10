@@ -18,14 +18,11 @@ const Navbar = () => {
   const navLinks = [
     { href: "#fleet", label: t.nav.fleet[lang] },
     { href: "#routes", label: t.nav.routes[lang] },
-    { href: "#", label: t.nav.insurance[lang] },
-    { href: "#", label: t.nav.driving[lang] },
-    { href: "#", label: t.nav.contact[lang] },
   ];
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/50">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Mountain className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
@@ -35,7 +32,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-6 text-sm text-muted-foreground">
+          <div className="hidden lg:flex items-center gap-8 text-sm text-muted-foreground">
             {navLinks.map((link) => (
               <a key={link.label} href={link.href} className="hover:text-foreground transition-colors">
                 {link.label}
@@ -45,7 +42,7 @@ const Navbar = () => {
 
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Language switcher - desktop */}
-            <div className="hidden sm:flex items-center gap-1 bg-secondary/60 rounded-full p-1">
+            <div className="hidden sm:flex items-center gap-1 bg-secondary/40 rounded-full p-1">
               {langs.map((l) => (
                 <button
                   key={l}
@@ -61,10 +58,7 @@ const Navbar = () => {
               ))}
             </div>
 
-            <Button variant="outline" size="sm" className="hidden md:inline-flex text-xs border-border/50" onClick={() => setDemo(true)}>
-              {t.nav.manage[lang]}
-            </Button>
-            <Button size="sm" className="text-xs sm:text-sm h-8 sm:h-9 px-3 sm:px-4" onClick={() => setDemo(true)}>
+            <Button size="sm" className="text-xs sm:text-sm h-8 sm:h-9 px-4 sm:px-5" onClick={() => setDemo(true)}>
               {t.nav.book[lang]}
             </Button>
 
@@ -75,13 +69,13 @@ const Navbar = () => {
                   <Menu className="w-5 h-5" />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] bg-background border-border p-0">
+              <SheetContent side="right" className="w-[260px] bg-background border-border p-0">
                 <SheetTitle className="sr-only">Menu</SheetTitle>
                 <div className="flex flex-col h-full">
-                  <div className="p-5 border-b border-border">
+                  <div className="p-5 border-b border-border/50">
                     <div className="flex items-center gap-2">
                       <Mountain className="w-5 h-5 text-primary" />
-                      <span className="font-display text-base font-semibold">NordCar Iceland</span>
+                      <span className="font-display text-base font-semibold">NordCar</span>
                     </div>
                   </div>
 
@@ -91,7 +85,7 @@ const Navbar = () => {
                         key={link.label}
                         href={link.href}
                         onClick={() => setOpen(false)}
-                        className="block px-5 py-3.5 text-base text-foreground hover:bg-secondary/50 transition-colors"
+                        className="block px-5 py-3.5 text-base text-foreground hover:bg-secondary/30 transition-colors"
                       >
                         {link.label}
                       </a>
@@ -99,8 +93,7 @@ const Navbar = () => {
                   </div>
 
                   {/* Language switcher - mobile */}
-                  <div className="p-5 border-t border-border">
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3">Language</p>
+                  <div className="p-5 border-t border-border/50">
                     <div className="flex gap-2">
                       {langs.map((l) => (
                         <button
@@ -109,7 +102,7 @@ const Navbar = () => {
                           className={`text-lg px-3 py-2 rounded-lg transition-colors ${
                             lang === l
                               ? "bg-primary text-primary-foreground"
-                              : "bg-secondary/60 text-muted-foreground"
+                              : "bg-secondary/40 text-muted-foreground"
                           }`}
                         >
                           {flags[l]}
@@ -118,10 +111,7 @@ const Navbar = () => {
                     </div>
                   </div>
 
-                  <div className="p-5 border-t border-border space-y-2">
-                    <Button variant="outline" size="sm" className="w-full text-xs border-border/50" onClick={() => { setOpen(false); setDemo(true); }}>
-                      {t.nav.manage[lang]}
-                    </Button>
+                  <div className="p-5 border-t border-border/50">
                     <Button size="sm" className="w-full text-sm" onClick={() => { setOpen(false); setDemo(true); }}>
                       {t.nav.book[lang]}
                     </Button>
