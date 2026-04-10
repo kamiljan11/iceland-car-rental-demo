@@ -31,20 +31,18 @@ const USPSection = () => {
         </div>
 
         {/* Three Zeros — minimal, typographic */}
-        <div className="space-y-12 sm:space-y-16">
+        <div className="space-y-14 sm:space-y-20">
           {t.usp.zeros.map((zero, i) => (
-            <div key={i} className="flex items-start gap-6 sm:gap-10">
-              <div className="font-display text-5xl sm:text-7xl font-black text-primary/20 leading-none shrink-0 w-16 sm:w-24 text-right">
+            <div key={i} className="text-center max-w-xl mx-auto">
+              <div className="font-display text-5xl sm:text-7xl font-black text-primary/15 leading-none mb-3 sm:mb-4">
                 0{i + 1}
               </div>
-              <div className="pt-1 sm:pt-2">
-                <h3 className="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
-                  {zero.title[lang]}
-                </h3>
-                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-lg">
-                  {zero.desc[lang]}
-                </p>
-              </div>
+              <h3 className="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
+                {zero.title[lang]}
+              </h3>
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                {zero.desc[lang]}
+              </p>
             </div>
           ))}
         </div>
