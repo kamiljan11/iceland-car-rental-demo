@@ -14,23 +14,42 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
 import CookieConsent from "@/components/CookieConsent";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { ReactNode } from "react";
+
+const RevealSection = ({ children, delay = 0 }: { children: ReactNode; delay?: number }) => {
+  const { ref, isVisible } = useScrollReveal(0.1);
+  return (
+    <div
+      ref={ref}
+      className="transition-all duration-700 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "translateY(0)" : "translateY(32px)",
+        transitionDelay: `${delay}ms`,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <TrustBadges />
-      <USPSection />
-      <FleetSection />
-      <RoutesSection />
-      <PickupProcess />
-      <InsuranceCompare />
-      <AppShowcase />
-      <TeamSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <CTASection />
+      <RevealSection><TrustBadges /></RevealSection>
+      <RevealSection><USPSection /></RevealSection>
+      <RevealSection><FleetSection /></RevealSection>
+      <RevealSection><RoutesSection /></RevealSection>
+      <RevealSection><PickupProcess /></RevealSection>
+      <RevealSection><InsuranceCompare /></RevealSection>
+      <RevealSection><AppShowcase /></RevealSection>
+      <RevealSection><TeamSection /></RevealSection>
+      <RevealSection><TestimonialsSection /></RevealSection>
+      <RevealSection><FAQSection /></RevealSection>
+      <RevealSection><CTASection /></RevealSection>
       <Footer />
       <FloatingContact />
       <CookieConsent />
