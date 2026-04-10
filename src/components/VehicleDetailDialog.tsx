@@ -40,8 +40,11 @@ const VehicleDetailDialog = ({ open, onOpenChange, vehicleKey, images }: Vehicle
     { icon: Users, label: dm.seats[lang], value: String(s.seats) },
     { icon: Cog, label: lang === "en" ? "Transmission" : lang === "pl" ? "Skrzynia" : "Gírskipti", value: transmissionLabel[s.transmission] },
     { icon: FuelIcon, label: dm.fuel[lang], value: fuelLabels[s.fuel] },
-    { icon: Luggage, label: lang === "en" ? "Luggage" : lang === "pl" ? "Bagaż" : "Farangur", value: s.luggage > 0 ? `${s.luggage} bags` : "—" },
-    { icon: Mountain, label: v.froad ? dm.froad[lang] : dm.noFroad[lang], value: v.froad ? "✓" : "—" },
+    { icon: CarFront, label: dm.drive[lang], value: s.drivetrain },
+    { icon: Gauge, label: lang === "en" ? "Engine" : lang === "pl" ? "Silnik" : "Vél", value: s.engine },
+    { icon: Fuel, label: lang === "en" ? "Range" : lang === "pl" ? "Zasięg" : "Drægni", value: s.range },
+    { icon: Luggage, label: lang === "en" ? "Luggage" : lang === "pl" ? "Bagaż" : "Farangur", value: s.luggage > 0 ? `${s.luggage} bags` : (lang === "en" ? "Camper storage" : lang === "pl" ? "Schowek kampera" : "Geymsla húsbíls") },
+    { icon: Mountain, label: v.froad ? dm.froad[lang] : dm.noFroad[lang], value: v.froad ? "✓" : "✗" },
   ];
 
   return (
