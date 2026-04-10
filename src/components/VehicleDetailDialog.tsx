@@ -105,6 +105,13 @@ const VehicleDetailDialog = ({ open, onOpenChange, vehicleKey, images }: Vehicle
               </span>
             </div>
 
+            {/* Description */}
+            {'description' in v && v.description && (
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {(v.description as Record<string, string>)[lang]}
+              </p>
+            )}
+
             {/* Specs grid */}
             <div>
               <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-3">{dm.specs[lang]}</h4>
