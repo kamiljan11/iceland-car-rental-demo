@@ -53,7 +53,7 @@ const CTASection = () => {
             <Button
               size="lg"
               className="text-sm sm:text-base px-10 py-6 gap-2 font-bold bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto tracking-wide"
-              onClick={() => setDemo(true)}
+              onClick={() => window.open("https://spirit-way-bloom.lovable.app/", "_blank")}
             >
               {t.cta.cta1[lang]}
               <ArrowRight className="w-4 h-4" />
