@@ -79,7 +79,7 @@ const InsuranceCompare = () => {
                   </span>
                 ) : (
                   <span className="text-[10px] sm:text-xs text-muted-foreground/70 font-medium">
-                    {row.them === "extra" ? (row.saved || labels.extra[lang]) : labels.seasonal[lang]}
+                    {row.saved || "—"}
                   </span>
                 )}
               </span>
