@@ -174,11 +174,11 @@ export const translations = {
       is: "Bílaleiga · Ísland",
     },
     title1: { en: "Discover Iceland", pl: "Odkryj Islandię", is: "Uppgötvaðu Ísland" },
-    title2: { en: "without limits", pl: "bez granic", is: "án takmarkana" },
+    title2: { en: "your way", pl: "po swojemu", is: "á þinn hátt" },
     desc: {
-      en: "Reliable SUVs, camper vans and compact cars ready for any Icelandic adventure — from the Ring Road to hidden valleys.",
-      pl: "Niezawodne SUV-y, kampery i auta kompaktowe gotowe na każdą islandzką przygodę — od Ring Road po ukryte doliny.",
-      is: "Áreiðanlegir jeppar, húsbílar og smábílar tilbúnir í hvaða ævintýri sem er á Íslandi — frá Hringveginum að duldum dölum.",
+      en: "SUVs, campers and compact cars — ready for any road, any season.",
+      pl: "SUV-y, kampery i kompakty — gotowe na każdą drogę, o każdej porze roku.",
+      is: "Jeppar, húsbílar og smábílar — tilbúnir á hvern veg, á hverri árstíð.",
     },
     cta1: { en: "Book now", pl: "Zarezerwuj teraz", is: "Bókaðu núna" },
     cta2: { en: "View fleet", pl: "Zobacz flotę", is: "Sjá bílaflota" },
@@ -191,11 +191,11 @@ export const translations = {
   },
   fleet: {
     label: { en: "Our fleet", pl: "Nasza flota", is: "Bílaflotinn okkar" },
-    title: { en: "Vehicles for every terrain", pl: "Pojazdy na każdy teren", is: "Ökutæki fyrir hvert landslag" },
+    title: { en: "Choose your vehicle", pl: "Wybierz swój pojazd", is: "Veldu ökutæki" },
     desc: {
-      en: "Every car is prepared for Icelandic conditions — winter tyres, GPS, insurance and a full starter pack.",
-      pl: "Każdy samochód jest przygotowany na islandzkie warunki — opony zimowe, GPS, ubezpieczenie i pełny pakiet startowy.",
-      is: "Hver bíll er útbúinn fyrir íslenskar aðstæður — vetrardekk, GPS, trygging og fullt byrjunarpakka.",
+      en: "All cars include full insurance, GPS, and winter tyres.",
+      pl: "Każde auto z pełnym ubezpieczeniem, GPS i oponami zimowymi.",
+      is: "Allir bílar með fullri tryggingu, GPS og vetrardekk.",
     },
     details: { en: "Details →", pl: "Szczegóły →", is: "Nánar →" },
     bestFor: { en: "Best for:", pl: "Najlepszy na:", is: "Best fyrir:" },
@@ -310,11 +310,11 @@ export const translations = {
   },
   itinerary: {
     label: { en: "Free with every rental", pl: "Gratis do każdego wynajmu", is: "Ókeypis með hverri leigu" },
-    title: { en: "Your personal Iceland itinerary", pl: "Twój osobisty plan podróży", is: "Þitt persónulega ferðaáætlun" },
+    title: { en: "Popular routes", pl: "Popularne trasy", is: "Vinsælar leiðir" },
     desc: {
-      en: "Tell us your dates, interests and comfort level — our local team builds a day-by-day driving plan tailored just for you. Delivered in our app before you land.",
-      pl: "Podaj nam daty, zainteresowania i poziom komfortu — nasz lokalny zespół przygotuje dla Ciebie plan podróży dzień po dniu. Dostarczony w naszej aplikacji przed lądowaniem.",
-      is: "Segðu okkur dagsetningar, áhugamál og þægindakröfur — staðbundið teymi okkar smíðar dag-fyrir-dag akstursáætlun sérsniðna að þér. Afhent í appinu okkar áður en þú lendir.",
+      en: "Plan your drive with our most popular Iceland itineraries.",
+      pl: "Zaplanuj podróż z naszymi najpopularniejszymi trasami.",
+      is: "Skipuleggðu aksturinn þinn með vinsælustu leiðum okkar.",
     },
     features: [
       {
@@ -344,7 +344,7 @@ export const translations = {
   },
   testimonials: {
     label: { en: "Traveler stories", pl: "Opinie podróżnych", is: "Sögur ferðamanna" },
-    title: { en: "Trusted by adventurers", pl: "Zaufanie podróżników", is: "Traust ævintýrafólks" },
+    title: { en: "What travelers say", pl: "Co mówią podróżni", is: "Hvað ferðamenn segja" },
     items: [
       {
         name: "Sarah & Tom",
@@ -477,22 +477,22 @@ export const translations = {
     title1: { en: "Three Zeros.", pl: "Trzy zera.", is: "Þrjú núll." },
     title2: { en: "Total peace of mind.", pl: "Totalny spokój.", is: "Fullkominn hugarró." },
     desc: {
-      en: "Most rental companies in Iceland charge €2,000+ deposits and surprise you at pickup. We do the opposite. Everything is included, nothing is hidden.",
-      pl: "Większość wypożyczalni na Islandii pobiera depozyty ponad 2000€ i zaskakuje Cię przy odbiorze. My robimy odwrotnie. Wszystko jest w cenie, nic nie jest ukryte.",
-      is: "Flestar bílaleigur á Íslandi rukka 2.000€+ tryggingu og koma á óvart við afhendingu. Við gerum öfugt. Allt er innifalið, ekkert er falið.",
+      en: "Everything included, nothing hidden.",
+      pl: "Wszystko w cenie, nic nie jest ukryte.",
+      is: "Allt innifalið, ekkert falið.",
     },
     zeros: [
       {
         title: { en: "Zero Deposit", pl: "Zero depozyt", is: "Engin trygging" },
-        desc: { en: "No credit card hold. No cash upfront. Most competitors lock €2,000+ on your card — we don't hold a single cent.", pl: "Bez blokady na karcie. Bez gotówki z góry. Konkurencja blokuje 2000€+ — my nie blokujemy ani centa.", is: "Engin kreditkortahald. Ekkert fyrirfram. Keppinautar halda 2.000€+ — við höldum ekki einni krónu." },
+        desc: { en: "No credit card hold — we don't lock a single cent.", pl: "Bez blokady na karcie — nie blokujemy ani centa.", is: "Engin kreditkortahald — við höldum ekki einni krónu." },
       },
       {
         title: { en: "Zero Excess", pl: "Zero udział własny", is: "Engin sjálfsábyrgð" },
-        desc: { en: "Full insurance suite included in every booking. CDW, SCDW, gravel, sand & ash, water damage — all covered, zero out-of-pocket.", pl: "Pełne ubezpieczenie w każdej rezerwacji. CDW, SCDW, żwir, piasek, woda — wszystko pokryte, zero dopłat.", is: "Full trygging innifalin í hverri bókun. CDW, SCDW, möl, sandur og aska, vatn — allt tryggt, engin sjálfsábyrgð." },
+        desc: { en: "Full insurance in every booking. CDW, SCDW, gravel, sand & ash — all covered.", pl: "Pełne ubezpieczenie w każdej rezerwacji. CDW, SCDW, żwir, piasek — pokryte.", is: "Full trygging í hverri bókun. CDW, SCDW, möl, sandur — allt tryggt." },
       },
       {
         title: { en: "Zero Hidden Fees", pl: "Zero ukrytych opłat", is: "Engin falinn kostnaður" },
-        desc: { en: "The price you see online is the price you pay. No airport surcharge, no fuel tricks, no surprise charges at the counter.", pl: "Cena, którą widzisz online to cena, którą płacisz. Bez dopłat lotniskowych, bez sztuczek z paliwem, bez niespodzianek.", is: "Verðið sem þú sérð á netinu er verðið sem þú borgar. Ekkert flugvallargjald, engin eldsneytisbragð, engin óvænt gjöld." },
+        desc: { en: "Price online = price you pay. No surprises at the counter.", pl: "Cena online = cena, którą płacisz. Bez niespodzianek.", is: "Verð á netinu = verð sem þú borgar. Engar óvart." },
       },
     ],
     extras: [
@@ -515,9 +515,9 @@ export const translations = {
     title1: { en: "Want a Website Like This", pl: "Chcesz taką stronę", is: "Viltu svona vefsíðu" },
     title2: { en: "For Your Rental?", pl: "Dla swojej wypożyczalni?", is: "Fyrir þína bílaleigu?" },
     desc: {
-      en: "We build stunning, personalised websites for car rentals, tour operators, and travel businesses. Everything done for you — website, photos, ads, social media. One plan. Zero stress.",
-      pl: "Tworzymy piękne, spersonalizowane strony dla wypożyczalni, touroperatorów i firm turystycznych. Wszystko zrobimy za Ciebie — stronę, zdjęcia, reklamy, social media. Jeden plan. Zero stresu.",
-      is: "Við búum til glæsilegar, sérsniðnar vefsíður fyrir bílaleigur, ferðaskrifstofur og ferðafyrirtæki. Allt gert fyrir þig — vefsíða, myndir, auglýsingar, samfélagsmiðlar. Eitt pakki. Enginn stress.",
+      en: "Website, photos, ads, social media — all done for you. One plan, zero stress.",
+      pl: "Strona, zdjęcia, reklamy, social media — wszystko za Ciebie. Jeden plan, zero stresu.",
+      is: "Vefsíða, myndir, auglýsingar, samfélagsmiðlar — allt gert fyrir þig. Eitt pakki, enginn stress.",
     },
     features: {
       f1: { en: "Custom Website", pl: "Strona na zamówienie", is: "Sérsniðin vefsíða" },
