@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
-import StatsBar from "@/components/StatsBar";
+
 import USPSection from "@/components/USPSection";
 import FleetSection from "@/components/FleetSection";
 import PickupProcess from "@/components/PickupProcess";
@@ -23,7 +23,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <TrustBadges />
-      <StatsBar />
+      
       <NorthernLightsWave className="h-16 sm:h-24 -mb-1" />
       <USPSection />
       <FleetSection />
