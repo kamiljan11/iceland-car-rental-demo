@@ -16,7 +16,7 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
 import CookieConsent from "@/components/CookieConsent";
-import NorthernLightsWave from "@/components/svg/NorthernLightsWave";
+
 
 const Index = () => {
   return (
