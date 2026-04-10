@@ -18,6 +18,9 @@ const Navbar = () => {
   const navLinks = [
     { href: "#fleet", label: t.nav.fleet[lang] },
     { href: "#routes", label: t.nav.routes[lang] },
+    { href: "#insurance", label: t.nav.insurance[lang] },
+    { href: "#driving", label: t.nav.driving[lang] },
+    { href: "#faq", label: "FAQ" },
   ];
 
   return (
