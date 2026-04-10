@@ -43,7 +43,7 @@ const ImageGallery = ({ imgs, alt }: { imgs: string[]; alt: string }) => {
         loading="lazy"
         width={800}
         height={600}
-        className="w-full h-full object-cover object-[center_40%] transition-all duration-500"
+        className="w-full h-full object-cover object-[center_60%] transition-all duration-500"
       />
       {imgs.length > 1 && (
         <>
