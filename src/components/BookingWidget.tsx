@@ -74,7 +74,7 @@ const BookingWidget = () => {
           </div>
         </div>
       </div>
-      <DemoDialog open={demo} onOpenChange={setDemo} />
+      <DemoDialog open={demo} onOpenChange={setDemo} feature="search" />
     </>
   );
 };

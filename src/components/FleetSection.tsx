@@ -73,7 +73,7 @@ const FleetSection = () => {
           </div>
         </div>
       </section>
-      <DemoDialog open={demo} onOpenChange={setDemo} />
+      <DemoDialog open={demo} onOpenChange={setDemo} feature="details" />
     </>
   );
 };
