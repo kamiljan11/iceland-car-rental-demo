@@ -199,6 +199,22 @@ export const translations = {
     },
     details: { en: "Details →", pl: "Szczegóły →", is: "Nánar →" },
     bestFor: { en: "Best for:", pl: "Najlepszy na:", is: "Best fyrir:" },
+    detailModal: {
+      specs: { en: "Specifications", pl: "Specyfikacja", is: "Tæknilegar upplýsingar" },
+      included: { en: "Included with every rental", pl: "W cenie każdego wynajmu", is: "Innifalið í hverri leigu" },
+      bookThis: { en: "Book this vehicle", pl: "Zarezerwuj ten pojazd", is: "Bóka þetta ökutæki" },
+      froad: { en: "F-Road approved", pl: "Dozwolony na drogi F", is: "F-vegir leyfðir" },
+      noFroad: { en: "Paved roads only", pl: "Tylko drogi utwardzone", is: "Aðeins malbikaðir vegir" },
+      minAge: { en: "Min. driver age", pl: "Min. wiek kierowcy", is: "Lágmarksaldur ökumanns" },
+      seats: { en: "Seats", pl: "Miejsca", is: "Sæti" },
+      drive: { en: "Drivetrain", pl: "Napęd", is: "Drif" },
+      fuel: { en: "Fuel", pl: "Paliwo", is: "Eldsneyti" },
+      includedItems: {
+        en: ["Full CDW insurance", "Zero excess", "Winter tyres", "Free GPS", "24/7 roadside assistance", "Free cancellation 48h"],
+        pl: ["Pełne ubezpieczenie CDW", "Zerowy udział własny", "Opony zimowe", "Darmowy GPS", "Pomoc drogowa 24/7", "Darmowe anulowanie 48h"],
+        is: ["Full CDW trygging", "Engin sjálfsábyrgð", "Vetrardekk", "Ókeypis GPS", "24/7 vegahjálp", "Ókeypis afbókun 48 klst"],
+      },
+    },
   },
   vehicles: {
     suv: {
