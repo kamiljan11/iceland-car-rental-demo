@@ -169,7 +169,7 @@ const PhoneMockup = ({ activeScreen, lang }: { activeScreen: number; lang: Lang 
             </div>
           )}
 
-          {activeScreen === 3 && (
+          {activeScreen === 4 && (
             <div className="px-4 pt-4 flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-destructive/20 flex items-center justify-center mb-3">
                 <Phone className="w-7 h-7 text-destructive" />
