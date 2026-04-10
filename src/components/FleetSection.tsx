@@ -36,7 +36,7 @@ const ImageGallery = ({ imgs, alt }: { imgs: string[]; alt: string }) => {
   const [idx, setIdx] = useState(0);
 
   return (
-    <div className="relative overflow-hidden h-44 sm:h-52 group/gallery bg-secondary/30">
+    <div className="relative overflow-hidden h-52 sm:h-64 group/gallery bg-secondary/30">
       <img
         src={imgs[idx]}
         alt={alt}
