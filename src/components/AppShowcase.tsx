@@ -112,6 +112,45 @@ const PhoneMockup = ({ activeScreen, lang }: { activeScreen: number; lang: Lang 
 
           {activeScreen === 2 && (
             <div className="px-4 pt-2">
+              <div className="flex items-center gap-2 mb-3">
+                <Sparkles className="w-4 h-4 text-accent" />
+                <span className="text-[11px] font-semibold text-foreground">
+                  {lang === "en" ? "Nearby secrets" : lang === "pl" ? "Sekrety w pobliżu" : "Leyndarmál í nágrenninu"}
+                </span>
+              </div>
+              <div className="space-y-2">
+                {[
+                  { name: "Seljavallalaug Pool", dist: "0.8 km", type: "hot-spring" },
+                  { name: "Hidden Canyon Trail", dist: "2.1 km", type: "viewpoint" },
+                  { name: "Local Fish Soup", dist: "4.5 km", type: "food" },
+                ].map((spot) => (
+                  <div key={spot.name} className="bg-secondary/30 rounded-lg px-3 py-2.5">
+                    <div className="flex items-center justify-between mb-0.5">
+                      <span className="text-[10px] font-medium text-foreground">{spot.name}</span>
+                      <span className="text-[8px] text-primary font-semibold">{spot.dist}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Eye className="w-2.5 h-2.5 text-muted-foreground" />
+                      <span className="text-[8px] text-muted-foreground">
+                        {spot.type === "hot-spring" ? "🔥 Hidden hot spring" : spot.type === "viewpoint" ? "👁 Secret viewpoint" : "🍜 Local favorite"}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-3 bg-accent/10 border border-accent/20 rounded-lg px-3 py-2">
+                <div className="flex items-center gap-1.5">
+                  <MapPin className="w-3 h-3 text-accent" />
+                  <span className="text-[9px] text-accent font-medium">
+                    {lang === "en" ? "Alert: Secret waterfall 300m off road!" : lang === "pl" ? "Alert: Ukryty wodospad 300m od drogi!" : "Viðvörun: Leyndur foss 300m frá vegi!"}
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeScreen === 3 && (
+            <div className="px-4 pt-2">
               <div className="space-y-2">
                 {[
                   { road: "Route 1 (South)", status: "Open", color: "text-emerald-400" },
