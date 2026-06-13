@@ -58,7 +58,8 @@ const Footer = () => {
 
         <div className="border-t border-border/30 pt-6 text-center">
           <p className="text-muted-foreground text-xs">
-            © {new Date().getFullYear()} NordCar Iceland. All rights reserved.
+            © {new Date().getFullYear()} NordCar Iceland. All rights reserved.{" · "}built by{" "}
+            <a href="https://kamiljan.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Kamil Jan</a>
           </p>
         </div>
       </div>
